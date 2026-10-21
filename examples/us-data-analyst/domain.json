@@ -1,0 +1,47 @@
+{
+  "_about": "Fictional example: the domain file /start would write for a new graduate in analytics (SQL, dashboards, statistics, light machine learning).",
+  "industries": ["software", "health-tech", "finance"],
+  "categories": [
+    {"id": "own_field", "label": "Analytics", "fit": "core"},
+    {"id": "adjacent", "label": "Data engineering and ML", "fit": "bridge"},
+    {"id": "other", "label": "Other", "fit": "none"}
+  ],
+  "subfields": [
+    {"id": "analytics", "label": "data analytics / BI", "category": "own_field", "role": "core", "weight": 3,
+     "terms": ["data analy", "business intelligence", "\\bbi\\b", "dashboard", "tableau", "power ?bi", "looker", "\\bsql\\b", "reporting", "\\bkpi\\b", "a/b test", "experimentation"],
+     "aliases": ["Data Analyst", "Business Analyst", "BI Analyst", "Analytics", "Business Intelligence"]},
+    {"id": "stats", "label": "statistics / experimentation", "category": "own_field", "role": "core", "weight": 2,
+     "terms": ["statistic", "hypothesis test", "regression", "causal inference", "forecast", "survey"],
+     "aliases": ["Statistician", "Quantitative Analyst", "Statistics"]},
+    {"id": "dataeng", "label": "data engineering", "category": "adjacent", "role": "bridge", "weight": 2,
+     "terms": ["data engineer", "\\betl\\b", "airflow", "\\bdbt\\b", "data pipeline", "data warehouse", "snowflake", "bigquery", "spark"],
+     "aliases": ["Data Engineer", "Analytics Engineer", "ETL"]},
+    {"id": "ml", "label": "machine learning", "category": "adjacent", "role": "bridge", "weight": 2,
+     "terms": ["machine learning", "data scien", "scikit", "model training", "predictive model", "deep learning"],
+     "aliases": ["Data Scientist", "Machine Learning", "ML Engineer"]},
+    {"id": "swe", "label": "software engineering", "category": "other", "role": "other", "weight": 2,
+     "terms": ["software engineer", "backend", "frontend", "full.?stack", "\\bapi\\b", "kubernetes", "microservice", "devops"]},
+    {"id": "sales", "label": "sales and marketing", "category": "other", "role": "other", "weight": 2,
+     "terms": ["sales", "business development", "account executive", "marketing", "customer success", "recruit"]}
+  ],
+  "penalty_subfields": [],
+  "priority_employers": ["google", "microsoft", "amazon", "stripe", "databricks", "airbnb", "epic systems"],
+  "industry_regex": "software|tech|health|finance|fintech|analytics|data",
+  "income_context_re": "",
+  "search_terms": ["Data Analyst", "Business Intelligence Analyst", "Analytics", "Junior Data Scientist"],
+  "cv_evidence": [
+    {"term": "SQL (CV-1)", "re": "\\bsql\\b|postgres|mysql|bigquery|snowflake", "status": "covered", "evidence": "SQL in two internships and coursework"},
+    {"term": "Python (CV-2)", "re": "\\bpython\\b|pandas|numpy", "status": "covered", "evidence": "Python and pandas for analysis"},
+    {"term": "Tableau / Power BI (CV-3)", "re": "tableau|power ?bi|looker", "status": "covered", "evidence": "dashboards in the capstone project"},
+    {"term": "Excel (CV-4)", "re": "\\bexcel\\b", "status": "covered", "evidence": "advanced Excel"},
+    {"term": "Statistics (CV-5)", "re": "statistic|regression|hypothesis test", "status": "covered", "evidence": "statistics degree courses"},
+    {"term": "A/B testing (CV-6)", "re": "a/b test|experimentation", "status": "partial", "evidence": "one coursework experiment"},
+    {"term": "Airflow / dbt (CV-7)", "re": "airflow|\\bdbt\\b", "status": "gap", "evidence": ""},
+    {"term": "Spark (CV-8)", "re": "\\bspark\\b|databricks|hadoop", "status": "gap", "evidence": ""}
+  ],
+  "evidence_bonus": [],
+  "thesis_pillars": {},
+  "locked_terms": ["scikit-learn", "Tableau"],
+  "classification_overrides": [],
+  "walls": []
+}

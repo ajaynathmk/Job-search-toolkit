@@ -1,0 +1,195 @@
+{
+  "_about": "Fictional example: the domain file /start would write for an experienced mechanical design engineer (CAD, FEM simulation, manufacturing).",
+  "industries": [
+    "engineering",
+    "industry",
+    "manufacturing"
+  ],
+  "categories": [
+    {
+      "id": "own_field",
+      "label": "Mechanical engineering",
+      "fit": "core"
+    },
+    {
+      "id": "adjacent",
+      "label": "Adjacent engineering",
+      "fit": "bridge"
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "fit": "none"
+    }
+  ],
+  "subfields": [
+    {
+      "id": "design",
+      "label": "mechanical design",
+      "category": "own_field",
+      "role": "core",
+      "weight": 3,
+      "terms": [
+        "mechanical (design|engineer)",
+        "werktuigbouw",
+        "constructeur",
+        "constructeur mecanique",
+        "ingenieur mecanique",
+        "\\bcad\\b",
+        "solidworks",
+        "catia",
+        "tolerancing",
+        "gd&t",
+        "product development",
+        "produktentwicklung",
+        "konstruktion"
+      ],
+      "aliases": [
+        "Mechanical Engineer",
+        "Mechanical Design",
+        "Werktuigbouwkundig*",
+        "Constructeur",
+        "Konstrukteur*",
+        "Ingenieur Mecanique"
+      ]
+    },
+    {
+      "id": "simulation",
+      "label": "simulation (FEM, CFD)",
+      "category": "own_field",
+      "role": "core",
+      "weight": 3,
+      "terms": [
+        "\\bfem\\b",
+        "\\bfea\\b",
+        "\\bcfd\\b",
+        "ansys",
+        "abaqus",
+        "finite element",
+        "simulation",
+        "simulatie"
+      ],
+      "aliases": [
+        "FEM",
+        "FEA",
+        "CFD",
+        "Simulation Engineer"
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "label": "manufacturing engineering",
+      "category": "adjacent",
+      "role": "bridge",
+      "weight": 2,
+      "terms": [
+        "manufacturing engineer",
+        "production engineer",
+        "productietechniek",
+        "lean",
+        "dfm",
+        "industrialisation",
+        "process engineer"
+      ],
+      "aliases": [
+        "Manufacturing Engineer",
+        "Production Engineer",
+        "Process Engineer"
+      ]
+    },
+    {
+      "id": "software",
+      "label": "software engineering",
+      "category": "other",
+      "role": "other",
+      "weight": 2,
+      "terms": [
+        "software engineer",
+        "backend",
+        "frontend",
+        "full.?stack",
+        "\\bapi\\b",
+        "kubernetes",
+        "devops"
+      ]
+    },
+    {
+      "id": "sales",
+      "label": "sales and marketing",
+      "category": "other",
+      "role": "other",
+      "weight": 2,
+      "terms": [
+        "sales",
+        "business development",
+        "account manager",
+        "marketing",
+        "verkoop",
+        "commercial"
+      ]
+    }
+  ],
+  "penalty_subfields": [],
+  "priority_employers": [
+    "asml",
+    "philips",
+    "vdl",
+    "damen",
+    "thales"
+  ],
+  "industry_regex": "engineering|machine|systems|technolog|industr|manufactur|instruments",
+  "income_context_re": "",
+  "search_terms": [
+    "Mechanical Engineer",
+    "Werktuigbouwkundig Ingenieur",
+    "Design Engineer",
+    "FEM Engineer"
+  ],
+  "cv_evidence": [
+    {
+      "term": "SolidWorks / CATIA (CV-1)",
+      "re": "solidworks|catia|\\bcad\\b",
+      "status": "covered",
+      "evidence": "ten years of CAD work"
+    },
+    {
+      "term": "FEM / ANSYS (CV-2)",
+      "re": "ansys|abaqus|\\bfem\\b|\\bfea\\b|finite element",
+      "status": "covered",
+      "evidence": "structural FEM on two product lines"
+    },
+    {
+      "term": "GD&T (CV-3)",
+      "re": "gd&t|tolerancing",
+      "status": "covered",
+      "evidence": "tolerance analysis on assemblies"
+    },
+    {
+      "term": "CFD (CV-4)",
+      "re": "\\bcfd\\b|fluent|openfoam",
+      "status": "partial",
+      "evidence": "one cooling study"
+    },
+    {
+      "term": "Project leadership (CV-5)",
+      "re": "project (lead|manage)|team lead|projectleider",
+      "status": "covered",
+      "evidence": "led a four-person design team"
+    },
+    {
+      "term": "Python (CV-6)",
+      "re": "\\bpython\\b|matlab",
+      "status": "partial",
+      "evidence": "MATLAB scripting, some Python"
+    }
+  ],
+  "evidence_bonus": [],
+  "thesis_pillars": {},
+  "locked_terms": [
+    "SolidWorks",
+    "ANSYS",
+    "GD&T"
+  ],
+  "classification_overrides": [],
+  "walls": []
+}

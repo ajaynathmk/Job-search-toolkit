@@ -1,0 +1,72 @@
+{
+  "_about": "Region pack for Germany. Everything the engine needs to know about WHERE: which countries are searched, which languages the local market works in, which boards to sweep, what counts as a wall, and how work authorization moves a score. Patterns are written in plain letters (umlauts folded: ae oe ue ss) and matched against the folded text of the full posting. Copy this folder to start another country; /region in Claude Code does it for you.",
+  "code": "de",
+  "name": "Germany",
+  "home_country": "DE",
+  "primary_countries": ["DE"],
+  "scope_countries": ["DE"],
+  "local_languages": ["de"],
+  "date_order": "dmy",
+  "currency": "EUR",
+  "local_sources": ["bundesagentur", "bite_api", "bite_site", "adsapi", "rss", "sap_rss", "html_list"],
+  "country_hints": {},
+
+  "routes": {
+    "de_student_assistant": "Germany, student assistant (outside the 140-day account)",
+    "de_thesis": "Germany, thesis (study purpose)",
+    "de_student_permit": "Germany, student permit (140-day account)",
+    "de_post_study": "Germany, after graduation (job-search permit, then Blue Card)",
+    "de_skilled_worker": "Germany, skilled-worker permit or EU Blue Card",
+    "eu_erasmus": "EU, Erasmus+ placement",
+    "thesis_abroad": "Thesis abroad",
+    "employer_permit": "Needs an employer permit"
+  },
+
+  "route_rules": [
+    {"when": {"authorization": ["student_visa"], "country": ["DE"], "kind": ["student_assistant"],
+              "any": [{"employer_re": "universit|hochschule|klinikum|uniklinik|institut|helmholtz|fraunhofer|max.?planck|leibniz|dkfz|embl|charite|forschungszentrum|kompetenzzentrum"},
+                      {"url_re": "uni-|\\.uni|hochschule|\\.edu|mpg\\.de|fraunhofer|helmholtz|\\.tum\\.de|lmu\\.de"}]},
+     "adj": 1, "route": "de_student_assistant", "note": "Student or research assistant at a university or institute: outside the 140-day account, no extra permission (+1)"},
+    {"when": {"authorization": ["student_visa"], "country": ["DE"], "kind": ["thesis"]},
+     "adj": 1, "route": "de_thesis", "note": "Thesis in Germany: study purpose, uses no work days (+1). Ask the Ausländerbehörde before signing a paid thesis contract"},
+    {"when": {"authorization": ["student_visa"], "country": ["DE"], "kind": ["working_student", "internship", "trainee", "student_assistant"]},
+     "adj": 0, "route": "de_student_permit", "note": "Working student, voluntary internship or other student job in Germany: uses the 140-day account (0)"},
+    {"when": {"authorization": ["student_visa"], "country": ["DE"], "kind": ["entry", "mid", "senior"]},
+     "adj": -1, "route": "de_post_study", "note": "A career role in Germany for a student: possible after graduation (18-month job-search permit, then EU Blue Card or skilled-worker permit); check the current salary thresholds (-1)"},
+    {"when": {"authorization": ["needs_sponsorship", "work_visa"], "country": ["DE"], "kind": ["entry", "mid", "senior"]},
+     "adj": -1, "route": "de_skilled_worker", "note": "Skilled-worker permit or EU Blue Card needs a qualifying degree, a job offer and a salary above the current threshold (-1)"},
+    {"when": {"authorization": ["needs_sponsorship", "work_visa"], "country": ["DE"]},
+     "adj": -3, "route": "employer_permit", "note": "A student-level role with no student status in Germany: needs an employer-sponsored permit (-3)"},
+    {"when": {"authorization": ["student_visa", "needs_sponsorship", "work_visa"], "country": ["CH"]},
+     "adj": -3, "route": "none_found", "note": "Switzerland applies its own quota system to non-EU nationals (-3)"}
+  ],
+  "route_default": {"adj": -3, "route": "unknown", "note": "A role outside Germany with no stated route for a non-EU applicant (-3): the host country's own permit rules apply"},
+
+  "walls": [
+    {"label": "Security clearance", "re": "sicherheitsueberpruefung|security clearance|\\bue2\\b|\\bue3\\b|\\bitar\\b", "route_block": false},
+    {"label": "German or EU citizenship required", "re": "(deutsche|deutscher|german) (staatsangehoerigkeit|staatsbuerger|citizen)|staatsangehoerigkeit (eines|der) (eu|europaeischen)|\\b(eu|european) citizen(ship)?\\b.{0,20}(required|only|necessary|erforderlich|zwingend)|must be an eu",
+     "when": {"needs_authorization": true}, "route_block": true}
+  ],
+
+  "mail": {
+    "alert_queries": ["from:jobs@mail.xing.com", "from:jobagent.jobvector.de"],
+    "alert_senders": ["jobs@mail\\.xing\\.com", "jobagent\\.jobvector", "@zenjob"],
+    "query_words": ["Bewerbung", "Absage", "Vorstellungsgespraech", "Eingangsbestaetigung"]
+  },
+
+  "boards": [
+    {"name": "Bundesagentur für Arbeit", "kind": "api", "url": "https://www.arbeitsagentur.de/jobsuche/suche?was={kw}&wo={city}&angebotsart=1&veroeffentlichtseit=7", "note": "Public API behind the site, covers employers of every size. Watched automatically (job_watch.py, adapter bundesagentur)."},
+    {"name": "LinkedIn", "kind": "browser", "url": "https://www.linkedin.com/jobs/search/?keywords={kw}&location=Germany&f_TPR=r86400", "note": "Needs a rendered browser (scripts/browser_jd_reader.py); a plain fetch is blocked by robots.txt. Job alerts by email are read by the Gmail pass."},
+    {"name": "Xing", "kind": "browser", "url": "https://www.xing.com/jobs/search?keywords={kw}&location={city}", "note": "German market. Alerts arrive as e-mail from jobs@mail.xing.com; the posting is JSON-LD on the page."},
+    {"name": "StepStone", "kind": "search", "url": "https://www.stepstone.de/jobs/{kw}/in-{city}", "note": "Large general board; alert e-mail is read by the Gmail pass."},
+    {"name": "Indeed Germany", "kind": "search", "url": "https://de.indeed.com/jobs?q={kw}&l={city}&fromage=3", "note": "A plain fetch is often refused; use the Indeed connector or a browser."},
+    {"name": "Glassdoor Germany", "kind": "search", "url": "https://www.glassdoor.de/Job/jobs.htm?sc.keyword={kw}&locT=N&locId=96&fromAge=3", "note": "Gives no posting URL: find the employer's own posting before filing it (THE LINK RULE)."},
+    {"name": "Jobvector", "kind": "search", "url": "https://www.jobvector.de/", "note": "Life-science, medicine and engineering roles."},
+    {"name": "Academics", "kind": "search", "url": "https://www.academics.de/", "note": "Research and university positions, doctoral and postdoc."},
+    {"name": "EURAXESS", "kind": "search", "url": "https://euraxess.ec.europa.eu/jobs/search", "note": "Research positions across Europe."},
+    {"name": "Employer career sites", "kind": "ats", "url": "", "note": "Workday, Greenhouse, Lever, SmartRecruiters, Recruitee feeds, polled by job_watch.py from profile/sources.json."}
+  ],
+
+  "cv_conventions": "regions/de/cv-conventions.md",
+  "legal_notes": "regions/de/legal.md"
+}

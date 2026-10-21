@@ -1,0 +1,1025 @@
+{
+ "_about": "Employers whose career-site feed answered with real postings when probed, with the adapter and the identifiers scripts/job_watch.py needs. Onboarding copies the entries whose tags match your field into profile/sources.json. To add another employer follow rules/employers.md (find the careers page, identify the applicant system, test the feed, then add an entry to profile/sources.json). Entries carry the date they were last probed (`verified`). Tags are free words; match them to the industries in profile/domain.json.",
+ "employers": [
+  {
+   "name": "Roche",
+   "tags": [
+    "pharma",
+    "biotech",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "roche",
+   "wd": 3,
+   "site": "roche-ext"
+  },
+  {
+   "name": "Novartis",
+   "tags": [
+    "pharma",
+    "biotech",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "novartis",
+   "wd": 3,
+   "site": "Novartis_Careers"
+  },
+  {
+   "name": "Sanofi",
+   "tags": [
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "sanofi",
+   "wd": 3,
+   "site": "SanofiCareers"
+  },
+  {
+   "name": "AstraZeneca",
+   "tags": [
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "astrazeneca",
+   "wd": 3,
+   "site": "Careers"
+  },
+  {
+   "name": "MSD",
+   "tags": [
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "msd",
+   "wd": 5,
+   "site": "SearchJobs"
+  },
+  {
+   "name": "IQVIA",
+   "tags": [
+    "cro",
+    "pharma",
+    "health-data",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "iqvia",
+   "wd": 1,
+   "site": "IQVIA"
+  },
+  {
+   "name": "Pfizer",
+   "tags": [
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "pfizer",
+   "wd": 1,
+   "site": "PfizerCareers"
+  },
+  {
+   "name": "Thermo Fisher Scientific",
+   "tags": [
+    "life-science",
+    "lab-equipment",
+    "cro"
+   ],
+   "adapter": "workday",
+   "tenant": "thermofisher",
+   "wd": 5,
+   "site": "ThermoFisherCareers"
+  },
+  {
+   "name": "Gilead Sciences",
+   "tags": [
+    "pharma",
+    "biotech"
+   ],
+   "adapter": "workday",
+   "tenant": "gilead",
+   "wd": 1,
+   "site": "gileadcareers"
+  },
+  {
+   "name": "Amgen",
+   "tags": [
+    "pharma",
+    "biotech"
+   ],
+   "adapter": "workday",
+   "tenant": "amgen",
+   "wd": 1,
+   "site": "Careers"
+  },
+  {
+   "name": "GSK",
+   "tags": [
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "gsk",
+   "wd": 5,
+   "site": "GSKCareers"
+  },
+  {
+   "name": "Fortrea",
+   "tags": [
+    "cro",
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "fortrea",
+   "wd": 1,
+   "site": "Fortrea"
+  },
+  {
+   "name": "Labcorp",
+   "tags": [
+    "cro",
+    "diagnostics",
+    "life-science"
+   ],
+   "adapter": "workday",
+   "tenant": "labcorp",
+   "wd": 1,
+   "site": "External"
+  },
+  {
+   "name": "Regeneron",
+   "tags": [
+    "pharma",
+    "biotech"
+   ],
+   "adapter": "workday",
+   "tenant": "regeneron",
+   "wd": 1,
+   "site": "Careers"
+  },
+  {
+   "name": "Eisai",
+   "tags": [
+    "pharma"
+   ],
+   "adapter": "workday",
+   "tenant": "eisai",
+   "wd": 5,
+   "site": "eisai"
+  },
+  {
+   "name": "Flatiron Health",
+   "tags": [
+    "health-data",
+    "oncology",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "flatironhealth"
+  },
+  {
+   "name": "Isomorphic Labs",
+   "tags": [
+    "biotech",
+    "ai",
+    "drug-discovery"
+   ],
+   "adapter": "greenhouse",
+   "slug": "isomorphiclabs"
+  },
+  {
+   "name": "Dotmatics",
+   "tags": [
+    "life-science",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "dotmatics"
+  },
+  {
+   "name": "Doctolib",
+   "tags": [
+    "health-tech",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "doctolib"
+  },
+  {
+   "name": "Cellarity",
+   "tags": [
+    "biotech",
+    "ai"
+   ],
+   "adapter": "greenhouse",
+   "slug": "cellarity"
+  },
+  {
+   "name": "Veeva Systems",
+   "tags": [
+    "life-science",
+    "software",
+    "health-data"
+   ],
+   "adapter": "lever",
+   "slug": "veeva"
+  },
+  {
+   "name": "Bosch",
+   "tags": [
+    "engineering",
+    "industry",
+    "automotive"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "BoschGroup",
+   "terms": [
+    "Werkstudent",
+    "Praktikum",
+    "Masterarbeit",
+    "intern",
+    "working student",
+    "thesis"
+   ]
+  },
+  {
+   "name": "ERGOMED",
+   "tags": [
+    "cro",
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "ergomed",
+   "terms": [
+    "intern",
+    "student",
+    "trainee"
+   ]
+  },
+  {
+   "name": "Lonza",
+   "tags": [
+    "biotech",
+    "life-science",
+    "manufacturing"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "lonza",
+   "terms": [
+    "intern",
+    "student",
+    "thesis"
+   ]
+  },
+  {
+   "name": "ICON",
+   "tags": [
+    "cro",
+    "pharma",
+    "life-science"
+   ],
+   "adapter": "recruitee",
+   "slug": "icon"
+  },
+  {
+   "name": "Stripe",
+   "tags": [
+    "software",
+    "fintech",
+    "payments"
+   ],
+   "adapter": "greenhouse",
+   "slug": "stripe",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Databricks",
+   "tags": [
+    "software",
+    "data",
+    "ai"
+   ],
+   "adapter": "greenhouse",
+   "slug": "databricks",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Figma",
+   "tags": [
+    "software",
+    "design"
+   ],
+   "adapter": "greenhouse",
+   "slug": "figma",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Coinbase",
+   "tags": [
+    "fintech",
+    "crypto",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "coinbase",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Robinhood",
+   "tags": [
+    "fintech",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "robinhood",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Datadog",
+   "tags": [
+    "software",
+    "data",
+    "cloud"
+   ],
+   "adapter": "greenhouse",
+   "slug": "datadog",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Reddit",
+   "tags": [
+    "software",
+    "consumer-tech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "reddit",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Lyft",
+   "tags": [
+    "software",
+    "mobility"
+   ],
+   "adapter": "greenhouse",
+   "slug": "lyft",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Instacart",
+   "tags": [
+    "software",
+    "marketplace"
+   ],
+   "adapter": "greenhouse",
+   "slug": "instacart",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Pinterest",
+   "tags": [
+    "software",
+    "consumer-tech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "pinterest",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Asana",
+   "tags": [
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "asana",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Cloudflare",
+   "tags": [
+    "software",
+    "cloud",
+    "security"
+   ],
+   "adapter": "greenhouse",
+   "slug": "cloudflare",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Squarespace",
+   "tags": [
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "squarespace",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Brex",
+   "tags": [
+    "fintech",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "brex",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Chime",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "chime",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Affirm",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "affirm",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "GitLab",
+   "tags": [
+    "software",
+    "devtools"
+   ],
+   "adapter": "greenhouse",
+   "slug": "gitlab",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "MongoDB",
+   "tags": [
+    "software",
+    "data"
+   ],
+   "adapter": "greenhouse",
+   "slug": "mongodb",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Elastic",
+   "tags": [
+    "software",
+    "data"
+   ],
+   "adapter": "greenhouse",
+   "slug": "elastic",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Okta",
+   "tags": [
+    "software",
+    "security"
+   ],
+   "adapter": "greenhouse",
+   "slug": "okta",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Dropbox",
+   "tags": [
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "dropbox",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Discord",
+   "tags": [
+    "software",
+    "consumer-tech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "discord",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Anthropic",
+   "tags": [
+    "ai",
+    "software",
+    "research"
+   ],
+   "adapter": "greenhouse",
+   "slug": "anthropic",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Scale AI",
+   "tags": [
+    "ai",
+    "data",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "scaleai",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Samsara",
+   "tags": [
+    "iot",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "samsara",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Gusto",
+   "tags": [
+    "software",
+    "hr-tech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "gusto",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Epic Games",
+   "tags": [
+    "games",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "epicgames",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Riot Games",
+   "tags": [
+    "games"
+   ],
+   "adapter": "greenhouse",
+   "slug": "riotgames",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Roblox",
+   "tags": [
+    "games",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "roblox",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Duolingo",
+   "tags": [
+    "software",
+    "education"
+   ],
+   "adapter": "greenhouse",
+   "slug": "duolingo",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Toast",
+   "tags": [
+    "software",
+    "fintech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "toast",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Carta",
+   "tags": [
+    "fintech",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "carta",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Flexport",
+   "tags": [
+    "logistics",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "flexport",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Recursion",
+   "tags": [
+    "biotech",
+    "ai",
+    "drug-discovery"
+   ],
+   "adapter": "greenhouse",
+   "slug": "recursionpharmaceuticals",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Ginkgo Bioworks",
+   "tags": [
+    "biotech",
+    "synthetic-biology"
+   ],
+   "adapter": "greenhouse",
+   "slug": "ginkgobioworks",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Natera",
+   "tags": [
+    "genomics",
+    "diagnostics",
+    "health-tech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "natera",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "N26",
+   "tags": [
+    "fintech",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "n26",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Celonis",
+   "tags": [
+    "software",
+    "data"
+   ],
+   "adapter": "greenhouse",
+   "slug": "celonis",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Trade Republic",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "traderepublic",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "SumUp",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "sumup",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "GetYourGuide",
+   "tags": [
+    "software",
+    "travel"
+   ],
+   "adapter": "greenhouse",
+   "slug": "getyourguide",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Contentful",
+   "tags": [
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "contentful",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Adyen",
+   "tags": [
+    "fintech",
+    "payments"
+   ],
+   "adapter": "greenhouse",
+   "slug": "adyen",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Monzo",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "monzo",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Wise",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "wise",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Deliveroo",
+   "tags": [
+    "software",
+    "marketplace"
+   ],
+   "adapter": "greenhouse",
+   "slug": "deliveroo",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Canonical",
+   "tags": [
+    "software",
+    "open-source"
+   ],
+   "adapter": "greenhouse",
+   "slug": "canonical",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Wikimedia Foundation",
+   "tags": [
+    "non-profit",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "wikimedia",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Mozilla",
+   "tags": [
+    "software",
+    "non-profit"
+   ],
+   "adapter": "greenhouse",
+   "slug": "mozilla",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Nuro",
+   "tags": [
+    "autonomous-vehicles",
+    "robotics"
+   ],
+   "adapter": "greenhouse",
+   "slug": "nuro",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Waymo",
+   "tags": [
+    "autonomous-vehicles",
+    "robotics"
+   ],
+   "adapter": "greenhouse",
+   "slug": "waymo",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Lucid Motors",
+   "tags": [
+    "automotive",
+    "ev"
+   ],
+   "adapter": "greenhouse",
+   "slug": "lucidmotors",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Archer",
+   "tags": [
+    "aerospace"
+   ],
+   "adapter": "greenhouse",
+   "slug": "archer",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Formlabs",
+   "tags": [
+    "manufacturing",
+    "hardware",
+    "engineering"
+   ],
+   "adapter": "greenhouse",
+   "slug": "formlabs",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Oura",
+   "tags": [
+    "health-tech",
+    "hardware"
+   ],
+   "adapter": "greenhouse",
+   "slug": "oura",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Zocdoc",
+   "tags": [
+    "health-tech",
+    "software"
+   ],
+   "adapter": "greenhouse",
+   "slug": "zocdoc",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Komodo Health",
+   "tags": [
+    "health-tech",
+    "data"
+   ],
+   "adapter": "greenhouse",
+   "slug": "komodohealth",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Modern Health",
+   "tags": [
+    "health-tech"
+   ],
+   "adapter": "greenhouse",
+   "slug": "modernhealth",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Palantir",
+   "tags": [
+    "software",
+    "data"
+   ],
+   "adapter": "lever",
+   "slug": "palantir",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Spotify",
+   "tags": [
+    "software",
+    "media"
+   ],
+   "adapter": "lever",
+   "slug": "spotify",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Paytm",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "lever",
+   "slug": "paytm",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Outreach",
+   "tags": [
+    "software"
+   ],
+   "adapter": "lever",
+   "slug": "outreach",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Wealthfront",
+   "tags": [
+    "fintech"
+   ],
+   "adapter": "lever",
+   "slug": "wealthfront",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Gopuff",
+   "tags": [
+    "logistics"
+   ],
+   "adapter": "lever",
+   "slug": "gopuff",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Zoox",
+   "tags": [
+    "autonomous-vehicles",
+    "robotics"
+   ],
+   "adapter": "lever",
+   "slug": "zoox",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "Binance",
+   "tags": [
+    "crypto"
+   ],
+   "adapter": "lever",
+   "slug": "binance",
+   "verified": "2026-10-07"
+  },
+  {
+   "name": "McDonald's",
+   "tags": [
+    "retail"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "McDonaldsCorporation",
+   "verified": "2026-10-07",
+   "terms": [
+    "intern",
+    "student",
+    "graduate",
+    "junior",
+    "entry"
+   ]
+  },
+  {
+   "name": "Ubisoft",
+   "tags": [
+    "games"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "Ubisoft2",
+   "verified": "2026-10-07",
+   "terms": [
+    "intern",
+    "student",
+    "graduate",
+    "junior",
+    "entry"
+   ]
+  },
+  {
+   "name": "ServiceNow",
+   "tags": [
+    "software"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "ServiceNow",
+   "verified": "2026-10-07",
+   "terms": [
+    "intern",
+    "student",
+    "graduate",
+    "junior",
+    "entry"
+   ]
+  },
+  {
+   "name": "Experian",
+   "tags": [
+    "data",
+    "finance"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "Experian",
+   "verified": "2026-10-07",
+   "terms": [
+    "intern",
+    "student",
+    "graduate",
+    "junior",
+    "entry"
+   ]
+  },
+  {
+   "name": "Lonza",
+   "tags": [
+    "biotech",
+    "life-science"
+   ],
+   "adapter": "smartrecruiters",
+   "slug": "Lonza",
+   "verified": "2026-10-07",
+   "terms": [
+    "intern",
+    "student",
+    "graduate",
+    "junior",
+    "entry"
+   ]
+  }
+ ]
+}

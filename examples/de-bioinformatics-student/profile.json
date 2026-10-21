@@ -1,0 +1,23 @@
+{
+  "name": "Sam Example",
+  "email": "sam.example@example.com",
+  "extra_emails": [],
+  "career_stage": "student",
+  "levels_sought": ["thesis", "student_assistant", "working_student", "internship"],
+  "regions": ["de", "eu"],
+  "primary_countries": [],
+  "scope_countries": [],
+  "cities": ["Munich", "Heidelberg", "Berlin"],
+  "remote_ok": true,
+  "languages": [{"code": "en", "level": "c1"}, {"code": "de", "level": "a2"}, {"code": "tr", "level": "native"}],
+  "work_authorization": {"status": "student_visa", "note": "Fictional example: a non-EU master's student at a German university"},
+  "document_language": "en",
+  "accept_unrelated_income": false,
+  "min_salary": null,
+  "recency_points": true,
+  "tiers": {"tier1": 7, "tier2": 4},
+  "exclude_titles": [],
+  "mail": {"ignore_senders": [], "ignore_recipients": [], "alert_queries": [], "alert_senders": []},
+  "cv": {"headers": {}},
+  "verdict_labels": {}
+}

@@ -1,0 +1,53 @@
+{
+  "_about": "Fictional example: the domain file /start would write for a master's student in bioinformatics (genomics, statistics, machine learning for biology).",
+  "industries": ["pharma", "biotech", "life-science"],
+  "categories": [
+    {"id": "own_field", "label": "My field", "fit": "core"},
+    {"id": "data", "label": "Data and AI", "fit": "bridge"},
+    {"id": "other", "label": "Other", "fit": "none"}
+  ],
+  "subfields": [
+    {"id": "genomics", "label": "bioinformatics / genomics", "category": "own_field", "role": "core", "weight": 3,
+     "terms": ["bioinformat", "computational biology", "genomi", "transcriptom", "rna.?seq", "\\bngs\\b", "single.?cell", "\\bomics\\b", "variant calling", "sequencing data", "phylogen", "metagenom"],
+     "aliases": ["Bioinformatik*", "Bioinformatics", "Computational Biology", "Genomics", "Genomik*", "Omics", "NGS", "Sequencing"]},
+    {"id": "biostat", "label": "biostatistics / epidemiology", "category": "own_field", "role": "core", "weight": 2,
+     "terms": ["biostatist", "biometri", "statistical programming", "statistische (programmierung|analyse)", "survival analysis", "epidemiolog", "clinical (trial|research)", "\\bsas\\b"],
+     "aliases": ["Biostatistik*", "Biostatistics", "Biometrie", "Epidemiolog*", "Statistical Programming"]},
+    {"id": "ml_bio", "label": "machine learning for biology", "category": "data", "role": "bridge", "weight": 2,
+     "terms": ["machine learning", "maschinelles lernen", "deep learning", "protein (structure|language)", "alphafold", "drug discovery", "cheminformat"],
+     "aliases": ["Machine Learning", "Deep Learning", "Drug Discovery"]},
+    {"id": "data_sci", "label": "data science / analytics", "category": "data", "role": "income", "weight": 2,
+     "terms": ["data scien", "data analy", "datenanalyse", "\\bsql\\b", "\\bpython\\b", "dashboard", "\\betl\\b", "data engineer"],
+     "aliases": ["Data Science", "Data Analyst", "Datenanalyse"]},
+    {"id": "wetlab", "label": "wet-lab work", "category": "other", "role": "other", "weight": 2,
+     "terms": ["laborant", "pipett", "zellkultur", "cell culture", "\\bpcr\\b", "western blot", "\\bhplc\\b", "\\belisa\\b", "wet.?lab", "bench work"]},
+    {"id": "business", "label": "business and administration", "category": "other", "role": "other", "weight": 2,
+     "terms": ["marketing", "vertrieb", "\\bsales\\b", "finance", "buchhaltung", "personalwesen", "social media", "event management", "recruiting"]}
+  ],
+  "penalty_subfields": [{"subfield": "wetlab", "label": "wet-lab work with no analysis part", "points": -2}],
+  "priority_employers": ["helmholtz", "max.?planck", "embl", "dkfz", "fraunhofer", "boehringer", "roche", "bayer", "novartis", "biontech", "sanofi"],
+  "industry_regex": "pharma|biotech|life.?science|genom|diagnost|clinic|klinik|medic|bio|health",
+  "income_context_re": "gene|genom|patient|clinical|klinisch|biolog|protein|drug|pharma",
+  "income_context_min": 3,
+  "search_terms": ["Bioinformatics", "Computational Biology", "Genomics", "Biostatistics", "Single-cell", "Data Science Life Science"],
+  "cv_evidence": [
+    {"term": "Python (CV-3)", "re": "\\bpython\\b", "status": "covered", "evidence": "Python for NGS pipelines and statistics, projects section"},
+    {"term": "R / Bioconductor (CV-3)", "re": "\\br\\b(?! &)|bioconductor|deseq2|tidyverse", "status": "covered", "evidence": "R for differential expression, projects section"},
+    {"term": "RNA-seq analysis (CV-4)", "re": "rna.?seq|transcriptom|differential expression", "status": "covered", "evidence": "bulk RNA-seq thesis project"},
+    {"term": "Workflow managers (CV-5)", "re": "nextflow|snakemake", "status": "partial", "evidence": "Snakemake in a course project; no Nextflow"},
+    {"term": "Linux and bash (CV-6)", "re": "\\blinux\\b|\\bbash\\b|\\bhpc\\b|\\bslurm\\b", "status": "covered", "evidence": "daily use on a cluster"},
+    {"term": "Statistics (CV-7)", "re": "statistic|statistik|hypothesis test|regression", "status": "covered", "evidence": "master's coursework and thesis"},
+    {"term": "Single-cell methods (CV-8)", "re": "single.?cell|scrna|seurat|scanpy", "status": "gap", "evidence": ""},
+    {"term": "Deep learning frameworks (CV-9)", "re": "pytorch|tensorflow|keras", "status": "gap", "evidence": ""},
+    {"term": "SQL (CV-10)", "re": "\\bsql\\b|postgres|mysql", "status": "partial", "evidence": "basic SQL in a database course"},
+    {"term": "Git (CV-11)", "re": "\\bgit\\b|github|gitlab", "status": "covered", "evidence": "version control for all projects"}
+  ],
+  "evidence_bonus": [{"label": "asks for RNA-seq and the CV shows it", "ask_re": "rna.?seq|transcriptom", "have_terms": ["RNA-seq"], "points": 1}],
+  "thesis_pillars": {"genomics": "genomics", "biostat": "biostatistics", "ml_bio": "ml"},
+  "locked_terms": ["scikit-learn", "Snakemake", "Bioconductor", "DESeq2"],
+  "classification_overrides": [{"subfield": "wetlab", "min": 4, "ratio_vs_own": 0.5, "unless_re": "python|\\br\\b|pipeline|bioinformat|statistic|machine learning|computational"}],
+  "walls": [
+    {"label": "Enrolment in medicine or a named state-exam degree", "re": "studierende[rn]? der (human|zahn)medizin|medical student|physikum|staatsexamen|approbation (als|erforderlich)",
+     "unless_re": "ausgenommen|any (field|discipline)|alle fachrichtungen|oder (naturwissenschaft|vergleichbar)|naturwissenschaften"}
+  ]
+}

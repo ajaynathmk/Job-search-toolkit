@@ -1,0 +1,40 @@
+{
+  "_about": "Template for a region pack. `onboard.py scaffold-region <code> \"<Country>\"` copies this folder to profile/regions/<code>/ and rules/regions.md says how to research each field. Delete every _comment key when done. Patterns are plain letters (fold umlauts and accents: ae oe ue ss, e for accented e) matched against the folded text of the full posting.",
+  "code": "xx",
+  "name": "Country name",
+  "home_country": "XX",
+  "primary_countries": ["XX"],
+  "scope_countries": ["XX"],
+  "local_languages": ["en"],
+  "date_order": "dmy",
+  "currency": "EUR",
+  "local_sources": [],
+  "country_hints": {"_comment": "ISO code -> regex of city and region words that identify it in a location string, for places resources/countries.json does not know"},
+
+  "routes": {
+    "xx_student": "Country, student work",
+    "xx_post_study": "Country, after graduation",
+    "xx_skilled_worker": "Country, skilled-worker permit"
+  },
+
+  "route_rules": [
+    {"_comment": "First rule whose `when` holds wins. when keys: authorization (list of profile statuses), country, not_country (ISO lists; __home__ = home market), kind (list), stage, employer_re, url_re, source_re, text_re, not_text_re, any (list of alternative conditions), needs_authorization (bool). adj is added to the content score (0..10 after clamping).",
+     "when": {"authorization": ["student_visa"], "country": ["XX"], "kind": ["internship", "working_student", "student_assistant", "trainee", "thesis"]},
+     "adj": 0, "route": "xx_student", "note": "What the law lets a student do here, with the article or rule it comes from"}
+  ],
+  "route_default": {"adj": -3, "route": "unknown", "note": "No route rule matched: the host country's own permit rules apply"},
+
+  "walls": [
+    {"_comment": "A wall is something the posting demands that the applicant cannot meet. label shows in the verdict; re is matched on the folded full text; unless_re cancels a hit; when limits it; route_block true means 'no legal route'.",
+     "label": "Security clearance", "re": "security clearance|sicherheitsueberpruefung", "route_block": false}
+  ],
+
+  "mail": {"alert_queries": [], "alert_senders": [], "query_words": []},
+
+  "boards": [
+    {"name": "Name of a job board", "kind": "search", "url": "https://example.org/jobs?q={kw}&l={city}", "note": "What it is good for, whether a plain fetch works, how its alerts arrive"}
+  ],
+
+  "cv_conventions": "cv-conventions.md",
+  "legal_notes": "legal.md"
+}

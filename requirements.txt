@@ -1,0 +1,26 @@
+# Python dependencies for the job-search toolkit. Install with: pip install -r requirements.txt
+# The core (requests, beautifulsoup4, lxml, python-dateutil, flask, pypdf) is enough for the watches, intake, the analysis and the dashboard.
+# Everything below the core switches one optional feature on; `python scripts/onboard.py doctor` says which.
+
+# --- core ---
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+python-dateutil>=2.8
+flask>=3.0
+pypdf>=4.0
+
+# --- CV and cover-letter packages (with Node.js and `npm install`) ---
+# keep_pass.py (pagination) rewrites paragraph formatting in place and needs python-docx.
+python-docx>=1.1
+
+# --- Gmail: replies to applications, alert mail, the digest e-mail (docs/GMAIL.md) ---
+google-api-python-client>=2.100
+google-auth>=2.23
+google-auth-oauthlib>=1.1
+google-auth-httplib2>=0.1
+
+# --- Reading LinkedIn and Xing postings in a rendered browser (scripts/browser_jd_reader.py) ---
+# After installing, run once: playwright install chromium
+playwright>=1.40
+playwright-stealth>=2.0

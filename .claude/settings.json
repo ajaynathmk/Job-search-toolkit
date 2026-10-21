@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/onboard.py:*)",
+      "Bash(python3 scripts/onboard.py:*)",
+      "Bash(python scripts/pipeline.py:*)",
+      "Bash(python3 scripts/pipeline.py:*)",
+      "Bash(python scripts/analyze.py:*)",
+      "Bash(python3 scripts/analyze.py:*)",
+      "Bash(python scripts/intake.py:*)",
+      "Bash(python3 scripts/intake.py:*)",
+      "Bash(python scripts/job_watch.py:*)",
+      "Bash(python3 scripts/job_watch.py:*)",
+      "Bash(python scripts/uni_watch.py:*)",
+      "Bash(python3 scripts/uni_watch.py:*)",
+      "Bash(python scripts/mail_sync.py:*)",
+      "Bash(python3 scripts/mail_sync.py:*)",
+      "Bash(python scripts/digest_email.py preview:*)",
+      "Bash(python3 scripts/digest_email.py preview:*)",
+      "Bash(python scripts/privacy_scan.py:*)",
+      "Bash(python3 scripts/privacy_scan.py:*)",
+      "Bash(python scripts/tests/run_all.py:*)",
+      "Bash(python3 scripts/tests/run_all.py:*)",
+      "Bash(python scripts/aicheck.py:*)",
+      "Bash(python scripts/consistency_check.py:*)",
+      "Bash(python scripts/lang_check.py:*)",
+      "Bash(python scripts/remote_sync.py status:*)",
+      "Bash(python scripts/scheduler.py status:*)"
+    ],
+    "deny": [
+      "Read(./config/**)",
+      "Read(./remote/.dev.vars)",
+      "Bash(git push:*)"
+    ]
+  }
+}

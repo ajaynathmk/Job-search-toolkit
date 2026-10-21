@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jobs from your CV</title>
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="stylesheet" href="/assets/start.css">
+<script>
+  try { var t = JSON.parse(localStorage.getItem("theme")); document.documentElement.setAttribute("data-theme", t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")); } catch (e) {}
+</script>
+</head>
+<body class="st-body">
+<header class="st-top">
+  <div class="st-brand"><span class="brand-mark">J</span><span>Jobs from your CV</span></div>
+  <div class="st-top-right">
+    <span id="engine" class="st-pill" role="status">Checking Claude…</span>
+    <a class="st-link" href="/today" id="dash-link" hidden>Open the full dashboard</a>
+    <button class="icon-btn" id="theme" aria-label="Switch theme">◐</button>
+  </div>
+</header>
+
+<main class="st-main" id="main">
+  <section class="st-hero" id="hero">
+    <h1>Give it your CV. It finds your jobs.</h1>
+    <p>It works out your field from the CV, searches employers, universities and job boards, reads every posting in full, scores each one against what your CV really shows, and lists the ones worth your time with the reason. Nothing is ever sent to an employer.</p>
+  </section>
+
+  <section class="st-card" id="card-cv" aria-labelledby="h-cv">
+    <h2 id="h-cv"><span class="st-step">1</span> Your CV</h2>
+    <div id="engine-warn" class="st-callout warn" hidden></div>
+    <label class="st-drop" id="drop" for="file">
+      <input type="file" id="file" accept=".pdf,.docx,.md,.markdown,.txt" class="sr-only">
+      <strong id="drop-title">Choose your CV, or drop it here</strong>
+      <span class="st-muted">PDF, Word (.docx), Markdown or plain text</span>
+    </label>
+    <p class="st-row"><button class="st-linkbtn" id="toggle-paste" type="button">Paste the text instead</button></p>
+    <div id="paste" hidden>
+      <label class="sr-only" for="paste-text">CV text</label>
+      <textarea id="paste-text" rows="8" placeholder="Paste the text of your CV here"></textarea>
+      <button class="st-btn secondary" id="paste-use" type="button">Use this text</button>
+    </div>
+    <p id="cv-ok" class="st-ok" hidden></p>
+    <p id="cv-err" class="st-callout bad" hidden></p>
+
+    <details class="st-details">
+      <summary>Anything to add? (optional)</summary>
+      <label for="notes">What are you looking for? Roles, countries, a start date, things you will not do. Whatever you write here beats what is guessed from the CV.</label>
+      <textarea id="notes" rows="4" placeholder="For example: a working-student job in a bioinformatics team in Munich or Berlin, from January; no sales roles"></textarea>
+    </details>
+    <details class="st-details">
+      <summary>Limits for one run</summary>
+      <div class="st-grid2">
+        <label>Usage cap <input type="number" id="budget" min="1" max="50" step="1" value="8"></label>
+        <label>Best fits to re-read in full <input type="number" id="review-limit" min="0" max="100" step="5" value="30"></label>
+      </div>
+      <p class="st-muted">Everything the application asks Claude to do runs on your Claude subscription, with no API key and no extra charge. The cap is a ceiling on how much of your plan one run may use, shown as the list-price value of that use. If your plan's own limit is reached, the run pauses and carries on when you press Start again.</p>
+    </details>
+
+    <div class="st-actions">
+      <button class="st-btn primary" id="start" type="button" disabled>Find my jobs</button>
+      <span class="st-muted" id="start-hint">Add your CV to begin.</span>
+    </div>
+  </section>
+
+  <section class="st-card" id="card-run" aria-labelledby="h-run" hidden>
+    <h2 id="h-run"><span class="st-step">2</span> What it is doing</h2>
+    <ol class="st-stages" id="stages"></ol>
+    <p id="run-msg" class="st-muted"></p>
+    <p class="st-muted" id="usage"></p>
+    <div id="run-err" class="st-callout bad" hidden></div>
+    <div class="st-actions">
+      <button class="st-btn secondary" id="stop" type="button" hidden>Stop after this step</button>
+      <button class="st-linkbtn" id="stop-now" type="button" hidden>Stop now</button>
+      <button class="st-btn primary" id="again" type="button" hidden>Press Start again</button>
+    </div>
+    <details class="st-details"><summary>Log</summary><pre id="log" class="st-log"></pre></details>
+  </section>
+
+  <section class="st-card" id="card-understood" aria-labelledby="h-und" hidden>
+    <h2 id="h-und"><span class="st-step">3</span> What I understood from your CV</h2>
+    <div id="und-body"></div>
+  </section>
+
+  <section class="st-card" id="card-results" aria-labelledby="h-res" hidden>
+    <div class="st-res-head">
+      <h2 id="h-res"><span class="st-step">4</span> Your jobs</h2>
+      <p class="st-muted" id="res-counts"></p>
+    </div>
+    <div class="st-chips" id="filters" role="group" aria-label="Filter"></div>
+    <div id="res-list"></div>
+  </section>
+
+  <section class="st-card" id="card-extras" aria-labelledby="h-ext" hidden>
+    <h2 id="h-ext">More</h2>
+    <p class="st-muted">Optional. Each one is off until you switch it on.</p>
+    <div id="extras"></div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="/assets/start.js"></script>
+</body>
+</html>

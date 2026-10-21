@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------------------------------------
+# Everything personal stays out of git. This file is the first line of defence; scripts/privacy_scan.py is the second.
+# ---------------------------------------------------------------------------------------------------------
+
+# Who you are, what you search for, your CV and your evidence bank
+/profile/
+
+# The tracker and everything the pipeline collects about real postings and real people
+/db/tracker.db
+/db/*.db
+/db/*.db-journal
+/jd/
+/applications/
+/data/
+/digests/
+/logs/
+
+# Secrets and credentials: Gmail OAuth client and token, the phone inbox's keys and passphrase hash
+/config/
+/remote/.dev.vars
+/remote/.wrangler/
+.env
+.env.*
+*.pem
+*.key
+token.json
+credentials.json
+
+# Build and tooling output
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+scripts/tests/_test_*.db
+scripts/tests/_test_*.db-journal
+.DS_Store
+Thumbs.db
+
+# Editor and local assistant settings
+.vscode/
+.idea/
+.claude/settings.local.json
+.claude/projects/
+
+# Browser automation profiles
+.browser-profile/
+playwright/.cache/

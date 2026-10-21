@@ -1,0 +1,65 @@
+{
+  "_about": "Region pack for the United States. Patterns are written in plain letters and matched against the folded text of the full posting. Work-authorization statuses used by the rules (profile.json work_authorization.status): citizen, permanent_resident, unrestricted (no rules apply); student_visa (F-1 student, still studying); opt (F-1 on post-completion OPT or the STEM extension); work_visa (employer-tied, e.g. H-1B); needs_sponsorship (outside the US or without status, needs an employer to sponsor).",
+  "code": "us",
+  "name": "United States",
+  "home_country": "US",
+  "primary_countries": ["US"],
+  "scope_countries": ["US"],
+  "local_languages": ["en"],
+  "date_order": "mdy",
+  "currency": "USD",
+  "local_sources": [],
+  "country_hints": {},
+
+  "routes": {
+    "us_on_campus": "On-campus job (F-1, up to 20 h/week in term)",
+    "us_cpt": "Curricular Practical Training (CPT)",
+    "us_opt": "Optional Practical Training (OPT / STEM OPT)",
+    "us_h1b": "Needs employer sponsorship (H-1B or similar)",
+    "employer_permit": "Needs an employer permit"
+  },
+
+  "route_rules": [
+    {"when": {"authorization": ["student_visa"], "kind": ["student_assistant", "working_student"],
+              "any": [{"employer_re": "universit|college|institute of technology|school of"}, {"url_re": "\\.edu"}]},
+     "adj": 1, "route": "us_on_campus", "note": "On-campus employment for F-1 students (up to 20 hours a week in term) needs no separate authorization beyond your school's rules (+1)"},
+    {"when": {"authorization": ["student_visa"], "kind": ["internship", "working_student", "student_assistant", "trainee", "thesis"]},
+     "adj": 0, "route": "us_cpt", "note": "An internship during your studies needs CPT (curricular training) authorized by your school's designated official before the start date (0)"},
+    {"when": {"authorization": ["student_visa", "opt"], "kind": ["entry", "mid"], "text_re": "no (visa )?sponsorship|will not sponsor|unable to sponsor|not (able|willing) to sponsor|without sponsorship"},
+     "adj": -1, "route": "us_opt", "note": "No sponsorship offered: OPT can cover the first period (12 months, up to 36 for STEM degrees at E-Verify employers) but not a long-term job (-1)"},
+    {"when": {"authorization": ["student_visa", "opt"], "kind": ["internship", "entry", "trainee"]},
+     "adj": 0, "route": "us_opt", "note": "Entry-level role after graduation: Optional Practical Training (12 months; 36 with the STEM extension at an E-Verify employer) (0)"},
+    {"when": {"authorization": ["student_visa", "opt", "needs_sponsorship", "work_visa"], "kind": ["mid", "senior"]},
+     "adj": -2, "route": "us_h1b", "note": "An experienced role needs employer sponsorship (H-1B or similar), which is capped and changes by year: look for employers that sponsor (-2)"},
+    {"when": {"authorization": ["needs_sponsorship", "work_visa"]},
+     "adj": -2, "route": "us_h1b", "note": "Needs employer sponsorship; check whether the employer has sponsored before (-2)"}
+  ],
+  "route_default": {"adj": -2, "route": "unknown", "note": "No work-authorization route matched this role: check it before applying (-2)"},
+
+  "walls": [
+    {"label": "U.S. citizenship or security clearance required", "re": "(u\\.?s\\.?|united states) citizen(ship)?\\b.{0,25}(required|only|necessary|must)|must be a (u\\.?s\\.?|united states) citizen|security clearance|secret clearance|\\bts/sci\\b|public trust|\\bitar\\b|u\\.?s\\.? person",
+     "when": {"needs_authorization": true}, "route_block": true},
+    {"label": "No visa sponsorship, and the applicant needs one", "re": "no (visa )?sponsorship|will not (provide )?sponsor|unable to sponsor|not (able|willing) to sponsor|without sponsorship|sponsorship (is )?not (available|offered|provided)",
+     "when": {"authorization": ["needs_sponsorship", "work_visa"]}, "route_block": true}
+  ],
+
+  "mail": {
+    "alert_queries": ["from:(alerts@indeed.com OR noreply@glassdoor.com)"],
+    "alert_senders": ["alerts@indeed", "noreply@glassdoor", "handshake"],
+    "query_words": ["application", "interview", "offer", "rejection", "assessment"]
+  },
+
+  "boards": [
+    {"name": "LinkedIn", "kind": "browser", "url": "https://www.linkedin.com/jobs/search/?keywords={kw}&location=United%20States&f_TPR=r86400", "note": "Needs a rendered browser (scripts/browser_jd_reader.py). Alerts by e-mail are read by the Gmail pass."},
+    {"name": "Indeed", "kind": "search", "url": "https://www.indeed.com/jobs?q={kw}&l={city}&fromage=3", "note": "A plain fetch is often refused; use a browser or the Indeed connector."},
+    {"name": "Glassdoor", "kind": "search", "url": "https://www.glassdoor.com/Job/jobs.htm?sc.keyword={kw}&fromAge=3", "note": "Gives no posting URL: find the employer's own posting before filing it (THE LINK RULE)."},
+    {"name": "Handshake", "kind": "login", "url": "https://joinhandshake.com/", "note": "Campus recruiting for students and new graduates; needs your school's login, so it is searched by you, not by a script."},
+    {"name": "Wellfound", "kind": "search", "url": "https://wellfound.com/jobs", "note": "Start-ups."},
+    {"name": "USAJOBS", "kind": "search", "url": "https://www.usajobs.gov/", "note": "Federal jobs: most require U.S. citizenship; Pathways internships are for citizens."},
+    {"name": "Employer career sites", "kind": "ats", "url": "", "note": "Greenhouse, Lever, Workday, Ashby and SmartRecruiters feeds, polled by job_watch.py from profile/sources.json."},
+    {"name": "H-1B Employer Data Hub", "kind": "reference", "url": "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub", "note": "Which employers have petitioned for H-1B before. Useful when you need sponsorship."}
+  ],
+
+  "cv_conventions": "regions/us/cv-conventions.md",
+  "legal_notes": "regions/us/legal.md"
+}

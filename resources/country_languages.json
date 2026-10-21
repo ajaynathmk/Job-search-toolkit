@@ -1,0 +1,15 @@
+{
+  "_about": "The working languages of each country (ISO 3166-1 alpha-2 code -> language codes, most used first). scripts/analyze.py checks a posting's language requirements for the languages of the posting's country and of your region pack, against the levels in your profile. Extend it for countries you search that are missing.",
+  "countries": {
+    "DE": ["de"], "AT": ["de"], "CH": ["de", "fr", "it"], "LI": ["de"], "LU": ["fr", "de"],
+    "FR": ["fr"], "BE": ["nl", "fr", "de"], "NL": ["nl"], "ES": ["es"], "PT": ["pt"], "IT": ["it"],
+    "SE": ["sv"], "DK": ["da"], "NO": ["no"], "FI": ["fi"], "IS": ["is"], "IE": [], "GB": [],
+    "PL": ["pl"], "CZ": ["cs"], "SK": ["sk"], "HU": ["hu"], "RO": ["ro"], "BG": ["bg"], "HR": ["hr"], "SI": ["sl"],
+    "GR": ["el"], "LT": ["lt"], "LV": ["lv"], "EE": ["et"], "MT": [], "CY": ["el"], "RS": ["sr"],
+    "TR": ["tr"], "UA": ["uk"],
+    "US": [], "CA": ["fr"], "AU": [], "NZ": [], "SG": [], "IN": [], "AE": ["ar"], "SA": ["ar"], "EG": ["ar"],
+    "JP": ["ja"], "KR": ["ko"], "CN": ["zh"], "HK": ["zh"], "TW": ["zh"],
+    "BR": ["pt"], "MX": ["es"], "AR": ["es"], "CL": ["es"], "CO": ["es"], "CR": ["es"],
+    "ZA": [], "IL": ["he"], "TH": ["th"], "MY": [], "ID": ["id"], "PH": [], "VN": ["vi"], "PK": []
+  }
+}

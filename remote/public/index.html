@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#4338ca">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Job%20inbox%22%2C%22short_name%22%3A%22Jobs%22%2C%22display%22%3A%22standalone%22%2C%22start_url%22%3A%22%2F%22%2C%22background_color%22%3A%22%23f5f6fa%22%2C%22theme_color%22%3A%22%234338ca%22%7D">
+<title>Job inbox</title>
+<style>
+:root{
+  --bg:#f5f6fa;--card:#fff;--card2:#f1f3f9;--ink:#0f172a;--dim:#475569;--mute:#64748b;--line:#e2e8f0;
+  --accent:#4f46e5;--accent2:#7c3aed;--accent-bg:#eef2ff;--on-accent:#fff;
+  --ok:#15803d;--ok-bg:#dcfce7;--warn:#a16207;--warn-bg:#fef3c7;--bad:#b91c1c;--bad-bg:#fee2e2;--info:#1d4ed8;--info-bg:#dbeafe;--plain:#475569;--plain-bg:#eef1f6;
+  --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px -12px rgba(15,23,42,.18);--glass:rgba(245,246,250,.78);
+  --r:20px;--tap:52px;--ease:cubic-bezier(.2,.9,.2,1);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0a0e1a;--card:#121a2c;--card2:#18223a;--ink:#f1f5f9;--dim:#cbd5e1;--mute:#94a3b8;--line:#223052;
+  --accent:#818cf8;--accent2:#a78bfa;--accent-bg:#1e1b4b;--on-accent:#0b0f1d;
+  --ok:#86efac;--ok-bg:#052e16;--warn:#fcd34d;--warn-bg:#3b2a06;--bad:#fca5a5;--bad-bg:#3b0d0d;--info:#93c5fd;--info-bg:#0b2447;--plain:#cbd5e1;--plain-bg:#1c2640;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -12px rgba(0,0,0,.6);--glass:rgba(10,14,26,.72)}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;overscroll-behavior-y:contain}
+button{font:inherit;color:inherit;cursor:pointer}
+.glass{background:var(--glass);-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px)}
+/* ---------- header */
+header{position:sticky;top:0;z-index:10;padding:calc(12px + env(safe-area-inset-top)) 18px 10px;border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:10px}
+h1{margin:0;font-size:26px;font-weight:800;letter-spacing:-.4px}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:12.5px;color:var(--mute);font-weight:600;display:flex;align-items:center;gap:7px;min-height:34px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb,var(--ok) 25%,transparent)}
+.pill.stale i{background:var(--warn);box-shadow:0 0 0 3px color-mix(in srgb,var(--warn) 25%,transparent)}.pill.stale{color:var(--warn)}
+.chips{display:flex;gap:8px;margin-top:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--dim);font-weight:700;font-size:14px}
+.chip[aria-pressed=true]{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--on-accent);border-color:transparent;box-shadow:0 6px 16px -6px color-mix(in srgb,var(--accent) 70%,transparent)}
+/* ---------- list */
+main{padding:14px 16px calc(110px + env(safe-area-inset-bottom));max-width:720px;margin:0 auto}
+.hint{font-size:13px;color:var(--mute);margin:2px 4px 14px}
+.cardwrap{position:relative;margin-bottom:16px;border-radius:var(--r);transition:height .28s var(--ease),margin .28s var(--ease),opacity .28s;overflow:hidden}
+.swipebg{position:absolute;inset:0;border-radius:var(--r);display:flex;align-items:center;padding:0 24px;font-weight:800;font-size:16px;letter-spacing:.3px;opacity:0}
+.swipebg.r{background:linear-gradient(90deg,var(--ok-bg),transparent);color:var(--ok);justify-content:flex-start}
+.swipebg.l{background:linear-gradient(270deg,var(--bad-bg),transparent);color:var(--bad);justify-content:flex-end}
+.card{position:relative;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);touch-action:pan-y;transition:transform .32s var(--ease),opacity .25s;will-change:transform;overflow:hidden}
+.card.drag{transition:none}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--tone,var(--line))}
+.cbody{padding:18px 18px 14px 22px;cursor:pointer}
+.cbody:active{background:var(--card2)}
+.card h2{margin:0;font-size:18px;line-height:1.28;font-weight:750;letter-spacing:-.2px}
+.sub{color:var(--dim);font-size:14.5px;margin-top:4px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.badge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;font-size:12.5px;font-weight:750;white-space:nowrap}
+.b-success{color:var(--ok);background:var(--ok-bg)}.b-accent{color:var(--accent);background:var(--accent-bg)}.b-info{color:var(--info);background:var(--info-bg)}.b-plain{color:var(--plain);background:var(--plain-bg)}.b-danger{color:var(--bad);background:var(--bad-bg)}.b-warning{color:var(--warn);background:var(--warn-bg)}
+.why{margin:12px 0 0;font-size:14.5px;color:var(--dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.more{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:13.5px;color:var(--accent);font-weight:700}
+/* ---------- the three decision buttons: big, spaced, labelled */
+.acts{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:10px;padding:4px 14px 16px 18px}
+.acts.two{grid-template-columns:1fr 1.5fr}.acts.ready{grid-template-columns:1fr 1fr 1.5fr}
+.btn{min-height:var(--tap);border-radius:16px;border:1.5px solid var(--line);background:var(--card);font-weight:750;font-size:15.5px;display:flex;align-items:center;justify-content:center;gap:7px;transition:transform .12s var(--ease),filter .12s;user-select:none}
+.btn:active{transform:scale(.96);filter:brightness(.95)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn.skip{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 35%,var(--line))}
+.btn.recheck{color:var(--info);border-color:color-mix(in srgb,var(--info) 35%,var(--line))}
+.btn.go{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:var(--on-accent);box-shadow:0 10px 22px -10px color-mix(in srgb,var(--accent) 80%,transparent)}
+.btn.ghost{background:var(--card2);border-color:transparent;color:var(--ink)}
+.empty{text-align:center;color:var(--mute);padding:56px 20px;font-size:15px}
+.skel{height:170px;border-radius:var(--r);margin-bottom:16px;background:linear-gradient(100deg,var(--card) 30%,var(--card2) 50%,var(--card) 70%);background-size:300% 100%;animation:sh 1.3s infinite}
+@keyframes sh{from{background-position:100% 0}to{background-position:0 0}}
+.card.in{animation:cardin .42s var(--ease) both}
+@keyframes cardin{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+/* ---------- bottom tab bar (thumb reach) */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:12;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.tab{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--mute);font-size:11.5px;font-weight:700;min-height:56px;justify-content:center;position:relative;border-radius:14px}
+.tab svg{width:24px;height:24px}
+.tab[aria-pressed=true]{color:var(--accent)}.tab[aria-pressed=true]::after{content:"";position:absolute;top:2px;width:26px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.tab .n{position:absolute;top:4px;left:calc(50% + 8px);min-width:18px;height:18px;border-radius:9px;background:var(--accent);color:var(--on-accent);font-size:11px;display:flex;align-items:center;justify-content:center;padding:0 5px}
+.tab .n.zero{display:none}
+/* ---------- the details sheet */
+#scrim{position:fixed;inset:0;background:rgba(2,6,23,.5);opacity:0;pointer-events:none;transition:opacity .3s;z-index:20;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+#scrim.show{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;height:94dvh;max-width:720px;margin:0 auto;background:var(--bg);border-radius:28px 28px 0 0;z-index:21;transform:translateY(105%);transition:transform .38s var(--ease);display:flex;flex-direction:column;box-shadow:0 -20px 60px -20px rgba(0,0,0,.5)}
+.sheet.show{transform:none}
+.grab{width:44px;height:5px;border-radius:5px;background:var(--line);margin:10px auto 2px;flex:none}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;padding:6px 18px 8px;flex:none}
+.sheet .top b{font-size:15px;color:var(--mute);letter-spacing:.4px;text-transform:uppercase}
+.close{min-height:44px;min-width:44px;border-radius:14px;border:0;background:var(--card2);font-weight:750;padding:0 16px}
+.sbody{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 18px 28px}
+.sbody h2{font-size:22px;line-height:1.25;margin:0 0 4px;letter-spacing:-.3px}
+.sec{margin-top:26px}.sec h3{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--mute);margin:0 0 10px;font-weight:800}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fact{background:var(--card);border-radius:16px;padding:11px 14px;box-shadow:var(--shadow)}.fact.wide{grid-column:1/-1}
+.fact .k{font-size:12px;color:var(--mute);font-weight:600}.fact .v{font-size:15px;font-weight:650;overflow-wrap:anywhere;hyphens:auto;margin-top:1px}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.lbl{font-size:13px;color:var(--mute);margin:12px 0 6px;font-weight:600}
+.scorerow{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:9px 0;border-bottom:1px solid var(--line)}
+.desc p{margin:0 0 12px;font-size:16px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.desc.clamp{max-height:380px;overflow:hidden;position:relative}.desc.clamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(transparent,var(--bg))}
+.readall{display:block;margin:10px auto 0;min-height:48px;padding:0 22px;border-radius:14px;border:1.5px solid var(--accent);background:transparent;color:var(--accent);font-weight:750}
+.sbar{flex:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent);max-height:62dvh;overflow-y:auto}
+.openlink{display:flex;align-items:center;justify-content:center;gap:9px;min-height:48px;border-radius:16px;background:var(--accent-bg);color:var(--accent);font-weight:800;text-decoration:none;font-size:16px;border:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);margin-bottom:10px}
+.openlink svg{width:19px;height:19px}
+.sbar .acts{padding:0}
+.sbar .second{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.sbar .second .btn{min-height:46px;font-size:14.5px}
+.cap{font-size:12.5px;color:var(--mute);text-align:center;margin-top:10px;line-height:1.4}
+.sbar.compact .second,.sbar.compact .cap{display:none}.sbar.compact .btn{min-height:46px}.sbar.compact .openlink{min-height:44px;margin-bottom:8px}
+.sbar{transition:padding .2s}
+.sbar.editing .openlink,.sbar.editing .acts,.sbar.editing .second{display:none}
+.panel{background:var(--card);border-radius:16px;padding:12px;margin-top:10px;box-shadow:var(--shadow)}
+.panel textarea,.panel input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px;background:var(--bg);color:var(--ink);font:inherit;font-size:16px}
+.panel textarea{min-height:84px;resize:vertical}.panel .btn{margin-top:10px;width:100%}
+/* ---------- misc */
+.toast{position:fixed;left:14px;right:14px;bottom:calc(92px + env(safe-area-inset-bottom));max-width:620px;margin:0 auto;background:var(--ink);color:var(--bg);border-radius:18px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px;z-index:40;font-size:15px;font-weight:600;box-shadow:0 18px 40px -16px rgba(0,0,0,.6);transform:translateY(24px);opacity:0;pointer-events:none;transition:all .32s var(--ease)}
+.toast.show{transform:none;opacity:1;pointer-events:auto}.toast button{background:none;border:0;color:inherit;font-weight:850;text-decoration:underline;min-height:32px;padding:0 6px}
+.login{max-width:400px;margin:16vh auto 0;padding:0 22px}.login h1{font-size:32px}.login input{width:100%;padding:16px;border:1.5px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);font-size:17px;margin:16px 0 8px}
+.err{color:var(--bad);font-size:14px;min-height:22px}
+.mini{font-size:13px;color:var(--mute)}
+a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="scrim"></div>
+<div class="sheet" id="sheet" aria-hidden="true" role="dialog" aria-modal="true"></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const IC = {
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+  redo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg>',
+  ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+  send: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10 14"/><path d="m21 3-7 18-4-8-8-4 19-6z"/></svg>',
+  note: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v12l-5 5H5z"/><path d="M14 21v-5h5M8 9h8M8 13h4"/></svg>',
+  decide: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="5"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 6 8-6"/></svg>',
+  thesis: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>',
+  sent: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>'
+};
+const VERDICT = {APPLY: ["Apply", "success", 1, "var(--ok)"], BACKUP: ["Backup", "accent", 2, "var(--accent)"], PLAN: ["Plan", "info", 3, "var(--info)"], LATER: ["Later", "plain", 4, "var(--mute)"]};
+const OTHER = {PASS: ["Not a fit", "plain"], BLOCKED: ["Blocked", "danger"], EXPIRED: ["Deadline passed", "warning"]};
+const MKIND = {rejection: ["Rejected", "danger"], interview: ["Invitation", "success"], offer: ["Offer", "success"], info_request: ["Asks you to act", "warning"], ack: ["Received", "plain"]};
+const S = {data: null, events: [], tab: "decide", chip: "ALL", lastErr: "", sheet: null};
+const today = () => new Date().toISOString().slice(0, 10);
+const ago = iso => { if (!iso) return "never"; const m = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 60000)); return m < 2 ? "just now" : m < 90 ? m + " min ago" : m < 2880 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " days ago"; };
+const buzz = ms => { try { navigator.vibrate && navigator.vibrate(ms); } catch (e) { /* not supported */ } };
+
+async function api(path, method = "GET", body) {
+  const r = await fetch(path, {method, headers: body ? {"Content-Type": "application/json"} : {}, body: body ? JSON.stringify(body) : undefined, credentials: "same-origin"});
+  let d = {}; try { d = await r.json(); } catch (e) { d = {error: "unexpected reply"}; }
+  d._status = r.status; return d;
+}
+
+function loginView(err) {
+  $("#app").innerHTML = `<div class="login"><h1>Job inbox</h1><p class="sub">Private. Enter your passphrase.</p><input id="pw" type="password" autocomplete="current-password" placeholder="Passphrase" autofocus>
+  <div class="err">${esc(err || "")}</div><button class="btn go" id="go" style="width:100%">Open</button></div>`;
+  const submit = async () => { const r = await api("/api/login", "POST", {passphrase: $("#pw").value}); if (r.ok) load(); else loginView(r.error || "failed"); };
+  $("#go").onclick = submit; $("#pw").onkeydown = e => { if (e.key === "Enter") submit(); };
+}
+
+async function load() {
+  const r = await api("/api/snapshot");
+  if (r._status === 401) return loginView();
+  if (r.error) { S.lastErr = r.error; return render(); }
+  S.data = r.snapshot; S.events = r.events || []; S.lastErr = ""; render();
+}
+
+const evOf = id => S.events.filter(e => e.item === id).sort((a, b) => a.created < b.created ? 1 : -1)[0];
+const decided = it => { const e = evOf(it.id); return e && e.action !== "note" && e.status !== "failed" ? e : null; };
+const rankOf = it => (VERDICT[it.verdict] || [0, 0, 9])[2] * 100 - (it.score || 0);
+const byId = id => ((S.data || {}).items || []).find(i => i.id === id);
+
+function views() {
+  const d = S.data || {items: [], mail: {act_now: []}};
+  const items = d.items || [];
+  const decide = items.filter(it => it.kind === "job" && it.status === "open" && ["none", "recheck"].includes(it.approval) && VERDICT[it.verdict] && !decided(it)).sort((a, b) => rankOf(a) - rankOf(b));
+  const ready = items.filter(it => it.kind === "job" && it.status === "open" && ["prepared", "requested"].includes(it.approval) && !decided(it)).sort((a, b) => (OTHER[a.verdict] ? 1 : 0) - (OTHER[b.verdict] ? 1 : 0) || rankOf(a) - rankOf(b));
+  const thesis = items.filter(it => it.kind === "thesis" && !decided(it)).sort((a, b) => rankOf(a) - rankOf(b));
+  const sent = items.filter(it => decided(it));
+  return {decide, ready, thesis, sent, mail: (d.mail || {}).act_now || [], replies: (d.mail || {}).replies || []};
+}
+
+const badge = (t, tone) => `<span class="badge b-${tone}">${esc(t)}</span>`;
+const vb = v => { const m = VERDICT[v] || OTHER[v]; return m ? badge(m[0], m[1]) : ""; };
+function dl(d) { if (!d) return ""; const n = Math.round((Date.parse(d) - Date.now()) / 86400000); return badge((n >= 0 && n <= 7 ? `Deadline in ${n} d` : "Deadline " + d.slice(5)), n <= 2 ? "danger" : n <= 7 ? "warning" : "plain"); }
+
+function actionsFor(it, mode) {
+  const id = esc(it.id);
+  if (mode === "ready") return `<div class="acts ready"><button class="btn skip" data-a="skip" data-id="${id}" aria-label="Not for me">${IC.x}Skip</button><button class="btn recheck" data-a="recheck" data-id="${id}">${IC.redo}Recheck</button><button class="btn go" data-a="detail" data-id="${id}">${IC.send}I applied</button></div>`;
+  if (it.kind === "thesis") return `<div class="acts two"><button class="btn skip" data-a="skip" data-id="${id}">${IC.x}Skip</button><button class="btn ghost" data-a="detail" data-id="${id}">Read &amp; decide</button></div>`;
+  return `<div class="acts"><button class="btn skip" data-a="skip" data-id="${id}" aria-label="Not for me">${IC.x}Skip</button><button class="btn recheck" data-a="recheck" data-id="${id}" aria-label="Recheck the posting first">${IC.redo}Recheck</button><button class="btn go" data-a="approve" data-id="${id}">${IC.check}Approve</button></div>`;
+}
+
+function cardHtml(it, mode) {
+  const tone = (VERDICT[it.verdict] || [])[3] || "var(--line)";
+  const swipe = mode !== "thesis" && mode !== "ready";
+  return `<div class="cardwrap" data-wrap="${esc(it.id)}">${swipe ? '<div class="swipebg r">Approve ✓</div><div class="swipebg l">Skip ✕</div>' : ""}
+  <article class="card in" data-id="${esc(it.id)}" ${swipe ? 'data-swipe="1"' : ""} style="--tone:${tone}">
+    <div class="cbody" data-a="detail" data-id="${esc(it.id)}"><h2>${esc(it.title)}</h2><div class="sub">${esc(it.employer || "")}${it.location ? " · " + esc(it.location) : ""}${it.etype ? " · " + esc(it.etype) : ""}</div>
+    <div class="row">${vb(it.verdict)}${it.score != null ? badge(it.score + "/10", it.score >= 6 ? "success" : it.score >= 4 ? "accent" : "plain") : ""}${dl(it.deadline)}</div>
+    ${it.why ? `<p class="why">${esc(it.why)}</p>` : ""}<div class="more"><span>Read details &amp; open the posting</span><span>›</span></div></div>
+    ${actionsFor(it, mode)}</article></div>`;
+}
+
+function sentHtml(it) {
+  const e = decided(it); const L = {approve: "Approved", recheck: "Recheck requested", skip: "Skipped", applied: "Marked applied", reopen: "Reopened"}[e.action] || e.action;
+  const st = e.status === "applied" ? badge("applied on PC", "success") : e.status === "failed" ? badge("PC: " + (e.msg || "failed"), "danger") : badge("waiting for the PC", "warning");
+  return `<div class="cardwrap"><article class="card in" style="--tone:var(--line)"><div class="cbody" style="cursor:default"><h2>${esc(L)}</h2><div class="sub">${esc(it.title)}</div><div class="row">${st}</div>${e.status !== "pending" && e.msg ? `<p class="why">${esc(e.msg)}</p>` : ""}</div>${e.status === "pending" ? `<div class="acts two"><span></span><button class="btn ghost" data-a="undo" data-ev="${esc(e.id)}">Undo</button></div>` : ""}</article></div>`;
+}
+
+const TABS = [["decide", "Decide", IC.decide], ["ready", "Ready", IC.send], ["mail", "Mail", IC.mail], ["thesis", "Thesis", IC.thesis], ["sent", "Sent", IC.sent]];
+function render() {
+  if (!S.data && !S.lastErr) { $("#app").innerHTML = '<header class="glass"><div class="hrow"><h1>Job inbox</h1></div></header><main><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>'; return; }
+  const v = views(), d = S.data, gen = d && d.generated, stale = !gen || Date.now() - Date.parse(gen) > 86400000;
+  const counts = {decide: v.decide.length, ready: v.ready.length, mail: v.mail.length, thesis: v.thesis.length, sent: v.sent.length};
+  let body = "", chips = "";
+  if (S.tab === "decide") {
+    chips = `<div class="chips">${["ALL", "APPLY", "BACKUP", "PLAN", "LATER"].map(c => `<button class="chip" data-chip="${c}" aria-pressed="${S.chip === c}">${c === "ALL" ? "All" : VERDICT[c][0]}</button>`).join("")}</div>`;
+    const list = v.decide.filter(it => S.chip === "ALL" || it.verdict === S.chip);
+    body = '<p class="hint">Tap a role to read it. Swipe right to approve, left to skip.</p>' + (list.map(it => cardHtml(it, "decide")).join("") || '<div class="empty">Nothing is waiting for a decision.</div>');
+  } else if (S.tab === "ready") body = '<p class="hint">Packages the PC has built. Mark them when you have sent them yourself.</p>' + (v.ready.map(it => cardHtml(it, "ready")).join("") || '<div class="empty">No packages are waiting to be sent.</div>');
+  else if (S.tab === "thesis") body = (v.thesis.slice(0, 60).map(it => cardHtml(it, "thesis")).join("") || '<div class="empty">No thesis leads.</div>');
+  else if (S.tab === "sent") body = '<p class="hint">Your decisions stay here until the PC has applied them. Undo works until then.</p>' + (v.sent.map(sentHtml).join("") || '<div class="empty">Nothing waiting for the PC.</div>');
+  else body = ([...v.mail.map(m => ({...m, act: true})), ...v.replies].map(m => { const k = MKIND[m.kind] || [m.kind, "plain"]; return `<div class="cardwrap"><article class="card in" style="--tone:var(--${k[1] === "danger" ? "bad" : k[1] === "success" ? "ok" : "warn"})"><div class="cbody" style="cursor:default"><div class="row" style="margin-top:0">${badge(k[0], k[1])}<span class="mini">${esc((m.date || "").slice(5))}</span></div><h2 style="margin-top:8px">${esc(m.employer || m.from || "")}</h2><div class="sub">${esc(m.role || m.subject || "")}</div>${m.act ? '<p class="why" style="-webkit-line-clamp:3">Do this on the PC or in the employer portal.</p>' : ""}</div></article></div>`; }).join("") || '<div class="empty">No mail needs you.</div>');
+  $("#app").innerHTML = `<header class="glass"><div class="hrow"><h1>${TABS.find(t => t[0] === S.tab)[1]}</h1><button class="pill ${stale ? "stale" : ""}" data-a="refresh"><i></i>${d ? "PC " + ago(gen) : "no data yet"}</button></div>${chips}</header><main>${body}</main>
+  <nav class="tabbar glass">${TABS.map(t => `<button class="tab" data-tab="${t[0]}" aria-pressed="${S.tab === t[0]}">${t[2]}<span>${t[1]}</span><span class="n ${counts[t[0]] ? "" : "zero"}">${counts[t[0]]}</span></button>`).join("")}</nav>`;
+}
+
+/* ---------------- toast, decisions */
+let toastT = null;
+function toast(msg, undoEv) {
+  const t = $("#toast"); t.innerHTML = `<span>${esc(msg)}</span>${undoEv ? `<button data-a="undo" data-ev="${esc(undoEv)}">Undo</button>` : ""}`; t.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), undoEv ? 8000 : 2600);
+}
+const LBL = {approve: "Approved", recheck: "Recheck requested", skip: "Skipped", applied: "Marked applied", note: "Note saved"};
+async function decide(id, action, extra = {}) {
+  const it = byId(id); if (!it) return;
+  const r = await api("/api/decision", "POST", {id, kind: it.kind, action, ...extra});
+  if (r.error) { if (r._status === 401) return loginView(); return toast("Could not save: " + r.error); }
+  S.events.push(r.event); render(); buzz(15);
+  toast(`${LBL[action] || "Saved"}: ${it.title.slice(0, 38)}`, r.event.id);
+}
+// the card slides away first, then the decision is saved (so a tap feels instant)
+function leave(id, dir, action) {
+  const w = document.querySelector(`[data-wrap="${CSS.escape(id)}"]`), c = w && w.querySelector(".card");
+  if (!w) return decide(id, action);
+  const h = w.offsetHeight; w.style.height = h + "px"; c.style.transform = `translateX(${dir * 115}%)`; c.style.opacity = "0";
+  setTimeout(() => { w.style.height = "0px"; w.style.marginBottom = "0px"; w.style.opacity = "0"; }, 180);
+  setTimeout(() => decide(id, action), 420);
+}
+
+/* ---------------- swipe (right = approve, left = skip); vertical scrolling is untouched */
+let sw = null;
+document.addEventListener("pointerdown", e => {
+  const c = e.target.closest("[data-swipe]"); if (!c || e.target.closest(".acts") || e.pointerType === "mouse") return;
+  sw = {c, x: e.clientX, y: e.clientY, dx: 0, on: false, id: c.dataset.id};
+});
+document.addEventListener("pointermove", e => {
+  if (!sw) return; const dx = e.clientX - sw.x, dy = e.clientY - sw.y;
+  if (!sw.on) { if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.6) { sw.on = true; sw.c.classList.add("drag"); try { sw.c.setPointerCapture(e.pointerId); } catch (x) { /* ok */ } } else if (Math.abs(dy) > 14) { sw = null; return; } else return; }
+  sw.dx = dx; sw.c.style.transform = `translateX(${Math.max(-160, Math.min(160, dx))}px)`;
+  const wrap = sw.c.parentElement; wrap.querySelector(".swipebg.r").style.opacity = dx > 0 ? Math.min(1, dx / 110) : 0; wrap.querySelector(".swipebg.l").style.opacity = dx < 0 ? Math.min(1, -dx / 110) : 0;
+});
+const endSwipe = () => {
+  if (!sw) return; const {c, dx, on, id} = sw; sw = null; if (!on) return;
+  c.classList.remove("drag"); c.dataset.swiped = "1"; setTimeout(() => delete c.dataset.swiped, 350);
+  if (dx > 110) { buzz(10); leave(id, 1, "approve"); } else if (dx < -110) { buzz(10); leave(id, -1, "skip"); } else { c.style.transform = ""; c.parentElement.querySelectorAll(".swipebg").forEach(b => b.style.opacity = ""); }
+};
+document.addEventListener("pointerup", endSwipe); document.addEventListener("pointercancel", endSwipe);
+
+/* ---------------- the details sheet */
+const textBlocks = t => String(t || "").split(/\n+/).map(x => x.trim()).filter(Boolean).map(x => `<p>${esc(x)}</p>`).join("");
+const chipset = (arr, cls) => (arr || []).map(x => `<span class="badge b-${cls}">${esc(x.t)}${x.a === "nice" ? " (nice to have)" : ""}</span>`).join("");
+function openSheetShell() { $("#scrim").classList.add("show"); const s = $("#sheet"); s.classList.add("show"); s.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; }
+function closeSheet(fromPop) {
+  $("#scrim").classList.remove("show"); const s = $("#sheet"); s.classList.remove("show"); s.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; S.sheet = null;
+  if (!fromPop && history.state && history.state.sheet) history.back();
+}
+window.addEventListener("popstate", () => { if (S.sheet) closeSheet(true); });
+$("#scrim").addEventListener("click", () => closeSheet());
+
+async function openDetail(id) {
+  const it = byId(id); if (!it) return;
+  S.sheet = id; openSheetShell(); history.pushState({sheet: 1}, "");
+  const head = `<div class="grab"></div><div class="top"><b>Role</b><button class="close" data-a="close-sheet">Close</button></div>`;
+  const title = `<h2>${esc(it.title)}</h2><div class="sub">${esc(it.employer || "")}${it.location ? " · " + esc(it.location) : ""}</div><div class="row">${vb(it.verdict)}${it.score != null ? badge(it.score + "/10", it.score >= 6 ? "success" : it.score >= 4 ? "accent" : "plain") : ""}${dl(it.deadline)}</div>`;
+  $("#sheet").innerHTML = head + `<div class="sbody">${title}<div class="skel" style="margin-top:22px"></div></div>`;
+  const d = await api("/api/detail?id=" + encodeURIComponent(id));
+  if (S.sheet !== id) return;
+  if (d._status === 401) { closeSheet(); return loginView(); }
+  const ready = ["prepared", "requested"].includes(it.approval), eid = esc(id);
+  const link = it.url ? `<a class="openlink" href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">${IC.ext}Open the posting${it.verified ? "" : " (link not checked yet)"}</a>` : '<div class="cap" style="margin:0 0 12px">No link for this role yet</div>';
+  const main = ready ? `<div class="acts ready"><button class="btn skip" data-a="skip" data-id="${eid}" data-close="1">${IC.x}Skip</button><button class="btn recheck" data-a="recheck" data-id="${eid}" data-close="1">${IC.redo}Recheck</button><button class="btn go" data-a="applied-open" data-id="${eid}">${IC.send}I applied</button></div>`
+    : it.kind === "thesis" ? `<div class="acts two"><button class="btn skip" data-a="skip" data-id="${eid}" data-close="1">${IC.x}Skip</button><button class="btn ghost" data-a="note-open" data-id="${eid}">${IC.note}Add note</button></div>`
+    : `<div class="acts"><button class="btn skip" data-a="skip" data-id="${eid}" data-close="1">${IC.x}Skip</button><button class="btn recheck" data-a="recheck" data-id="${eid}" data-close="1">${IC.redo}Recheck</button><button class="btn go" data-a="approve" data-id="${eid}" data-close="1">${IC.check}Approve</button></div>
+       <div class="second"><button class="btn ghost" data-a="applied-open" data-id="${eid}">${IC.send}I applied</button><button class="btn ghost" data-a="note-open" data-id="${eid}">${IC.note}Add note</button></div>`;
+  const cap = ready ? "I applied: mark it once you have sent it yourself." : it.kind === "thesis" ? "" : "Approve: the PC builds the CV and letter when it is on. Recheck: it re-reads the posting first. Skip: hides it.";
+  let body = title;
+  if (d.error) body += `<div class="empty">${esc(d.error)}</div>`;
+  else {
+    if ((d.facts || []).length) body += `<div class="sec"><h3>Key facts</h3><div class="facts">${d.facts.map(([k, v]) => `<div class="fact ${String(v).length > 24 ? "wide" : ""}"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div></div>`;
+    if (d.why) body += `<div class="sec"><h3>Why this verdict</h3><p style="font-size:16px;line-height:1.55;margin:0">${esc(d.why)}</p></div>`;
+    const cv = d.cv || {};
+    if ((cv.covered || []).length || (cv.partial || []).length || (cv.gaps || []).length)
+      body += `<div class="sec"><h3>Against your CV</h3>${(cv.covered || []).length ? `<div class="lbl" style="margin-top:0">Asked for, and your CV shows</div><div class="chipset">${chipset(cv.covered, "success")}</div>` : ""}${(cv.partial || []).length ? `<div class="lbl">Only partly</div><div class="chipset">${chipset(cv.partial, "warning")}</div>` : ""}${(cv.gaps || []).length ? `<div class="lbl">Asked for, not on your CV</div><div class="chipset">${chipset(cv.gaps, "danger")}</div>` : ""}</div>`;
+    const parts = Object.entries((d.score || {}).parts || {});
+    if (parts.length) body += `<div class="sec"><h3>How it scored</h3>${parts.map(([k, v]) => `<div class="scorerow"><span>${esc(k.replace(/ \([+-]\d\)/, ""))}</span><b>${v > 0 ? "+" : ""}${v}</b></div>`).join("")}${d.score.route ? `<div class="scorerow"><span>${esc(String(d.score.route).slice(0, 90))}</span><b>${d.score.adj > 0 ? "+" : ""}${d.score.adj}</b></div>` : ""}<div class="scorerow"><span><b>Score</b></span><b>${d.score.total}</b></div></div>`;
+    body += `<div class="sec"><h3>The posting</h3>` + (d.text ? `<div class="desc ${d.text.length > 1600 ? "clamp" : ""}" id="desc">${textBlocks(d.text)}</div>${d.text.length > 1600 ? '<button class="readall" data-a="read-all">Read the whole text</button>' : ""}` : '<div class="mini">The full text is not available for this role yet; use the link.</div>') + "</div>";
+  }
+  $("#sheet").innerHTML = head + `<div class="sbody" id="sbody">${body}</div><div class="sbar">${link}${main}<div id="panel"></div></div>`;
+  if (cap) $("#sbody").insertAdjacentHTML("beforeend", `<div class="sec"><h3>What the buttons do</h3><p class="mini" style="font-size:14px;line-height:1.5;margin:0">${esc(cap)}</p></div>`);
+  $("#sbody").scrollTop = 0;
+  let last = 0;
+  $("#sbody").addEventListener("scroll", e => { const y = e.target.scrollTop, bar = $(".sbar"); if (!bar || bar.classList.contains("editing")) return; if (y > last + 24 && y > 120) bar.classList.add("compact"); else if (y < last - 24) bar.classList.remove("compact"); last = y; }, {passive: true});
+}
+
+/* ---------------- date and note panels (no browser pop-ups) */
+function editing(on) { $(".sbar").classList.toggle("editing", on); }
+function appliedPanel(id) { editing(true); $("#panel").innerHTML = `<div class="panel" style="margin-top:0"><div class="lbl" style="margin-top:0">Date you applied</div><input type="date" id="adate" value="${today()}" max="${today()}"><button class="btn go" data-a="applied-go" data-id="${esc(id)}">${IC.check}Confirm: I applied</button><button class="btn ghost" data-a="panel-cancel">Back</button></div>`; }
+function notePanel(id) { editing(true); $("#panel").innerHTML = `<div class="panel" style="margin-top:0"><textarea id="ntext" placeholder="A note for your PC session (saved with this role)"></textarea><button class="btn go" data-a="note-go" data-id="${esc(id)}">${IC.note}Save note</button><button class="btn ghost" data-a="panel-cancel">Back</button></div>`; $("#ntext").focus(); }
+
+/* ---------------- clicks */
+document.addEventListener("click", async e => {
+  const t = e.target.closest("[data-a],[data-tab],[data-chip]"); if (!t) return;
+  if (t.dataset.tab) { S.tab = t.dataset.tab; render(); window.scrollTo({top: 0}); return; }
+  if (t.dataset.chip) { S.chip = t.dataset.chip; return render(); }
+  const card = t.closest("[data-swiped]"); if (card) return;
+  const a = t.dataset.a, id = t.dataset.id;
+  if (a === "detail") return openDetail(id);
+  if (a === "close-sheet") return closeSheet();
+  if (a === "refresh") { toast("Refreshing…"); return load(); }
+  if (a === "read-all") { $("#desc")?.classList.remove("clamp"); t.remove(); return; }
+  if (a === "panel-cancel") { $("#panel").innerHTML = ""; return editing(false); }
+  if (a === "applied-open") return appliedPanel(id);
+  if (a === "note-open") return notePanel(id);
+  if (a === "undo") { const r = await api("/api/decision?ev=" + encodeURIComponent(t.dataset.ev), "DELETE"); if (r.ok) { S.events = S.events.filter(x => x.id !== t.dataset.ev); render(); toast("Undone"); } else toast(r.error || "Could not undo"); return; }
+  if (a === "applied-go") { const when = ($("#adate") || {}).value || today(); closeSheet(); return decide(id, "applied", {date: when}); }
+  if (a === "note-go") { const txt = (($("#ntext") || {}).value || "").trim(); if (!txt) return toast("Write something first"); closeSheet(); return decide(id, "note", {note: txt}); }
+  if (["approve", "recheck", "skip"].includes(a)) {
+    if (t.dataset.close) closeSheet();
+    const wrap = document.querySelector(`[data-wrap="${CSS.escape(id)}"]`);
+    return wrap ? leave(id, a === "skip" ? -1 : 1, a) : decide(id, a);
+  }
+});
+
+document.addEventListener("visibilitychange", () => { if (!document.hidden && !S.sheet) load(); });
+load();
+</script>
+</body>
+</html>

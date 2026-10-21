@@ -1,0 +1,373 @@
+{
+ "_about": "Country recognition for scripts/intake.py (country_of). Each entry: ISO code, name, and a regular expression matched against a posting's location text (lower-cased unless case_sensitive). First match wins, so list the more specific entries first. Add cities or spellings for your own region here or in regions/<code>/region.json under `country_hints`.",
+ "countries": [
+  {
+   "code": "DE",
+   "name": "Germany",
+   "rx": ",\\s*de\\b|\\bdeu\\b|\\bgermany\\b|\\bdeutschland\\b|stuttgart|penzberg|frankfurt|mannheim|dresden|hamburg|berlin|muenchen|münchen|munich|koeln|köln|cologne|nuernberg|nürnberg|nuremberg|ulm\\b|marburg|leverkusen|darmstadt|ludwigshafen|ingelheim|biberach|heidelberg|leipzig|hannover|hanover|bonn|duesseldorf|düsseldorf|essen|dortmund|bremen|kiel|rostock|greifswald|jena|halle|magdeburg|potsdam|regensburg|augsburg|wuerzburg|würzburg|erlangen|freiburg|tuebingen|tübingen|karlsruhe|konstanz|goettingen|göttingen|mainz|wiesbaden|giessen|gießen|muenster|münster|bochum|aachen|jülich|juelich|martinsried|planegg|wedel|grenzach|wuppertal|bad vilbel|iserlohn|bielefeld|oldenburg|osnabrueck|osnabrück|saarbruecken|saarbrücken|homburg|passau|bayreuth|straubing"
+  },
+  {
+   "code": "CH",
+   "name": "Switzerland",
+   "rx": "switzerland|schweiz|suisse|basel|zurich|zürich|kaiseraugst|rotkreuz|schaffhausen|geneva|genf|bern\\b"
+  },
+  {
+   "code": "AT",
+   "name": "Austria",
+   "rx": "austria|österreich|oesterreich|vienna|wien|innsbruck|graz|linz|salzburg"
+  },
+  {
+   "code": "GB",
+   "name": "United Kingdom",
+   "rx": "united kingdom|\\buk\\b|england|london|reading|welwyn|stevenage|oxford|cambridge|hertfordshire|\\bgbr\\b|maidenhead|slough|uxbridge|durham,? uk|scotland|wales"
+  },
+  {
+   "code": "FR",
+   "name": "France",
+   "rx": "france|frankreich|paris|lyon|toulouse|montpellier|marcy|velizy|vélizy|sèvres|sevres|castanet|cesson|nantes|bordeaux|lille|strasbourg|sisteron|marseille|grenoble"
+  },
+  {
+   "code": "ES",
+   "name": "Spain",
+   "rx": "spain|españa|spanien|barcelona|madrid|sant cugat|burgos|aranda|valencia|sevilla"
+  },
+  {
+   "code": "IT",
+   "name": "Italy",
+   "rx": "italy|italia|milan|milano|\\broma\\b|\\brome\\b|turin|scoppito|pomezia|aprilia|catania|bologna"
+  },
+  {
+   "code": "NL",
+   "name": "Netherlands",
+   "rx": "netherlands|nederland|utrecht|amsterdam|rotterdam|leiden|eindhoven"
+  },
+  {
+   "code": "BE",
+   "name": "Belgium",
+   "rx": "belgium|belgique|belgië|brussels|kortrijk|ghent|gent|leuven"
+  },
+  {
+   "code": "SE",
+   "name": "Sweden",
+   "rx": "sweden|sverige|gothenburg|göteborg|stockholm|uppsala|lund"
+  },
+  {
+   "code": "DK",
+   "name": "Denmark",
+   "rx": "denmark|danmark|copenhagen|aarhus"
+  },
+  {
+   "code": "PL",
+   "name": "Poland",
+   "rx": "poland|polska|warsaw|krakow|wroclaw"
+  },
+  {
+   "code": "PT",
+   "name": "Portugal",
+   "rx": "portugal|lisbon|lisboa|oeiras|porto\\b"
+  },
+  {
+   "code": "IE",
+   "name": "Ireland",
+   "rx": "ireland|\\birl\\b|dublin|cork|carlow|limerick"
+  },
+  {
+   "code": "GR",
+   "name": "Greece",
+   "rx": "greece|athens"
+  },
+  {
+   "code": "CZ",
+   "name": "Czechia",
+   "rx": "czech|prague|praha|brno"
+  },
+  {
+   "code": "FI",
+   "name": "Finland",
+   "rx": "finland|helsinki"
+  },
+  {
+   "code": "NO",
+   "name": "Norway",
+   "rx": "norway|oslo"
+  },
+  {
+   "code": "HU",
+   "name": "Hungary",
+   "rx": "hungary|budapest"
+  },
+  {
+   "code": "BG",
+   "name": "Bulgaria",
+   "rx": "bulgaria|sofia"
+  },
+  {
+   "code": "RO",
+   "name": "Romania",
+   "rx": "romania|bucharest"
+  },
+  {
+   "code": "HR",
+   "name": "Croatia",
+   "rx": "croatia|zagreb"
+  },
+  {
+   "code": "SI",
+   "name": "Slovenia",
+   "rx": "slovenia|ljubljana"
+  },
+  {
+   "code": "SK",
+   "name": "Slovakia",
+   "rx": "slovakia|bratislava"
+  },
+  {
+   "code": "LT",
+   "name": "Lithuania",
+   "rx": "lithuania|vilnius"
+  },
+  {
+   "code": "LV",
+   "name": "Latvia",
+   "rx": "latvia|riga"
+  },
+  {
+   "code": "EE",
+   "name": "Estonia",
+   "rx": "estonia|tallinn"
+  },
+  {
+   "code": "LU",
+   "name": "Luxembourg",
+   "rx": "luxembourg"
+  },
+  {
+   "code": "RS",
+   "name": "Serbia",
+   "rx": "serbia|belgrade"
+  },
+  {
+   "code": "MY",
+   "name": "Malaysia",
+   "rx": "malaysia|petaling jaya|kuala lumpur"
+  },
+  {
+   "code": "US",
+   "name": "United States",
+   "rx": "united states|\\busa\\b|\\bu\\.s\\.|, [A-Z]{2}\\b(?<!, DE)",
+   "case_sensitive": true
+  },
+  {
+   "code": "CA",
+   "name": "Canada",
+   "rx": "canada",
+   "case_sensitive": false
+  },
+  {
+   "code": "IN",
+   "name": "India",
+   "rx": "india|bangalore|mumbai|hyderabad|pune",
+   "case_sensitive": false
+  },
+  {
+   "code": "CN",
+   "name": "China",
+   "rx": "china|shanghai|beijing",
+   "case_sensitive": false
+  },
+  {
+   "code": "JP",
+   "name": "Japan",
+   "rx": "japan|tokyo",
+   "case_sensitive": false
+  },
+  {
+   "code": "KR",
+   "name": "South Korea",
+   "rx": "korea|seoul",
+   "case_sensitive": false
+  },
+  {
+   "code": "SG",
+   "name": "Singapore",
+   "rx": "singapore",
+   "case_sensitive": false
+  },
+  {
+   "code": "BR",
+   "name": "Brazil",
+   "rx": "brazil|brasil|sao paulo|são paulo",
+   "case_sensitive": false
+  },
+  {
+   "code": "MX",
+   "name": "Mexico",
+   "rx": "mexico|méxico",
+   "case_sensitive": false
+  },
+  {
+   "code": "CR",
+   "name": "Costa Rica",
+   "rx": "costa rica",
+   "case_sensitive": false
+  },
+  {
+   "code": "AR",
+   "name": "Argentina",
+   "rx": "argentina",
+   "case_sensitive": false
+  },
+  {
+   "code": "CO",
+   "name": "Colombia",
+   "rx": "colombia",
+   "case_sensitive": false
+  },
+  {
+   "code": "CL",
+   "name": "Chile",
+   "rx": "chile\\b",
+   "case_sensitive": false
+  },
+  {
+   "code": "AU",
+   "name": "Australia",
+   "rx": "australia|sydney",
+   "case_sensitive": false
+  },
+  {
+   "code": "AE",
+   "name": "United Arab Emirates",
+   "rx": "\\buae\\b|emirates|dubai",
+   "case_sensitive": false
+  },
+  {
+   "code": "SA",
+   "name": "Saudi Arabia",
+   "rx": "saudi",
+   "case_sensitive": false
+  },
+  {
+   "code": "EG",
+   "name": "Egypt",
+   "rx": "egypt",
+   "case_sensitive": false
+  },
+  {
+   "code": "ZA",
+   "name": "South Africa",
+   "rx": "south africa",
+   "case_sensitive": false
+  },
+  {
+   "code": "TW",
+   "name": "Taiwan",
+   "rx": "taiwan",
+   "case_sensitive": false
+  },
+  {
+   "code": "HK",
+   "name": "Hong Kong",
+   "rx": "hong kong",
+   "case_sensitive": false
+  },
+  {
+   "code": "IL",
+   "name": "Israel",
+   "rx": "israel",
+   "case_sensitive": false
+  },
+  {
+   "code": "TR",
+   "name": "Turkey",
+   "rx": "turkey|türkiye|istanbul",
+   "case_sensitive": false
+  },
+  {
+   "code": "TH",
+   "name": "Thailand",
+   "rx": "thailand",
+   "case_sensitive": false
+  },
+  {
+   "code": "MY",
+   "name": "Malaysia",
+   "rx": "malaysia",
+   "case_sensitive": false
+  },
+  {
+   "code": "ID",
+   "name": "Indonesia",
+   "rx": "indonesia",
+   "case_sensitive": false
+  },
+  {
+   "code": "PH",
+   "name": "Philippines",
+   "rx": "philippines",
+   "case_sensitive": false
+  },
+  {
+   "code": "VN",
+   "name": "Vietnam",
+   "rx": "vietnam",
+   "case_sensitive": false
+  },
+  {
+   "code": "PK",
+   "name": "Pakistan",
+   "rx": "pakistan",
+   "case_sensitive": false
+  },
+  {
+   "code": "US",
+   "name": "United States",
+   "rx": "\\bnew york\\b|\\bsan francisco\\b|\\bseattle\\b|\\bboston\\b|\\bchicago\\b|\\baustin\\b|\\blos angeles\\b|\\bsan diego\\b|\\bdenver\\b|\\batlanta\\b|\\bwashington,? d\\.?c\\b|\\bremote.{0,10}\\bus(a)?\\b|\\bunited states\\b",
+   "case_sensitive": false
+  }
+ ],
+ "eu_members": [
+  "AT",
+  "BE",
+  "BG",
+  "HR",
+  "CY",
+  "CZ",
+  "DK",
+  "EE",
+  "FI",
+  "FR",
+  "DE",
+  "GR",
+  "HU",
+  "IE",
+  "IT",
+  "LV",
+  "LT",
+  "LU",
+  "MT",
+  "NL",
+  "PL",
+  "PT",
+  "RO",
+  "SK",
+  "SI",
+  "ES",
+  "SE"
+ ],
+ "europe_extra": [
+  "CH",
+  "GB",
+  "NO",
+  "IS",
+  "RS",
+  "LI",
+  "AL",
+  "BA",
+  "ME",
+  "MK",
+  "MD",
+  "UA",
+  "XK"
+ ]
+}

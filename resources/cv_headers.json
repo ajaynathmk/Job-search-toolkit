@@ -1,0 +1,149 @@
+{
+  "_about": "The section headings a CV may use, per language, and the salutation and closing words of a cover letter. scripts/consistency_check.py checks that a cv.md uses one language's headings, never a mix, and that its cover letter is in the same language. Add a language by copying an entry; add your own extra sections for a language in profile/profile.json under cv.headers.<code>.",
+  "languages": {
+    "en": {
+      "profile": "Profile",
+      "headers": [
+        "Profile",
+        "Summary",
+        "Work Experience",
+        "Experience",
+        "Research Project",
+        "Projects",
+        "Education",
+        "Skills",
+        "Courses & Certifications",
+        "Certifications",
+        "Languages",
+        "Publications",
+        "Internships",
+        "Volunteering",
+        "Awards",
+        "Interests"
+      ],
+      "salutation": "\\bDear\\b",
+      "closing": "Sincerely|Yours sincerely|Best regards|Kind regards|Regards,",
+      "cv_word": "CV",
+      "letter_word": "CoverLetter"
+    },
+    "de": {
+      "profile": "Profil",
+      "headers": [
+        "Profil",
+        "Kurzprofil",
+        "Berufserfahrung",
+        "Forschungsprojekt",
+        "Projekte",
+        "Ausbildung",
+        "Kenntnisse",
+        "Kurse & Zertifizierungen",
+        "Zertifizierungen",
+        "Sprachen",
+        "Publikationen",
+        "Praktika",
+        "Ehrenamt",
+        "Auszeichnungen",
+        "Interessen"
+      ],
+      "salutation": "Sehr geehrte",
+      "closing": "Mit freundlichen Gr",
+      "cv_word": "Lebenslauf",
+      "letter_word": "Anschreiben"
+    },
+    "fr": {
+      "profile": "Profil professionnel",
+      "headers": [
+        "Profil professionnel",
+        "Expérience professionnelle",
+        "Projets",
+        "Formation",
+        "Compétences",
+        "Certifications",
+        "Langues",
+        "Publications",
+        "Stages",
+        "Centres d'intérêt"
+      ],
+      "salutation": "Madame, Monsieur|Madame|Monsieur",
+      "closing": "Cordialement|Veuillez agréer|Bien cordialement",
+      "cv_word": "CV",
+      "letter_word": "LettreMotivation"
+    },
+    "es": {
+      "profile": "Perfil",
+      "headers": [
+        "Perfil",
+        "Experiencia profesional",
+        "Proyectos",
+        "Formación",
+        "Habilidades",
+        "Certificaciones",
+        "Idiomas",
+        "Publicaciones",
+        "Prácticas",
+        "Intereses"
+      ],
+      "salutation": "Estimad[oa]s?|Muy señor",
+      "closing": "Atentamente|Cordialmente|Un saludo",
+      "cv_word": "CV",
+      "letter_word": "CartaPresentacion"
+    },
+    "it": {
+      "profile": "Profilo",
+      "headers": [
+        "Profilo",
+        "Esperienza lavorativa",
+        "Progetti",
+        "Istruzione",
+        "Competenze",
+        "Certificazioni",
+        "Lingue",
+        "Pubblicazioni",
+        "Tirocini",
+        "Interessi"
+      ],
+      "salutation": "Gentile|Egregio|Spett\\.le",
+      "closing": "Cordiali saluti|Distinti saluti",
+      "cv_word": "CV",
+      "letter_word": "LetteraPresentazione"
+    },
+    "nl": {
+      "profile": "Profiel",
+      "headers": [
+        "Profiel",
+        "Werkervaring",
+        "Projecten",
+        "Opleiding",
+        "Vaardigheden",
+        "Certificeringen",
+        "Talen",
+        "Publicaties",
+        "Stages",
+        "Interesses"
+      ],
+      "salutation": "Geachte|Beste",
+      "closing": "Met vriendelijke groet|Hoogachtend",
+      "cv_word": "CV",
+      "letter_word": "Motivatiebrief"
+    },
+    "pt": {
+      "profile": "Perfil",
+      "headers": [
+        "Perfil",
+        "Experiência profissional",
+        "Projetos",
+        "Formação",
+        "Competências",
+        "Certificações",
+        "Idiomas",
+        "Publicações",
+        "Estágios",
+        "Interesses"
+      ],
+      "salutation": "Exmo|Prezad[oa]s?",
+      "closing": "Atenciosamente|Com os melhores cumprimentos|Cumprimentos",
+      "cv_word": "CV",
+      "letter_word": "CartaApresentacao"
+    }
+  }
+}

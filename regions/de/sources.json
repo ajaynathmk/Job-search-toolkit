@@ -1,0 +1,1776 @@
+{
+ "_about": "Sources the watches poll for Germany. institutions: universities, university hospitals, research institutes and public bodies, read without a browser (b-ite job portals, RSS, SAP recruiting feeds, plain HTML lists). national_board: the Bundesagentur für Arbeit API; its search queries are built from your own field terms and the role words below. Add or remove entries in profile/sources.json, not here.",
+ "national_board": {
+  "adapter": "bundesagentur",
+  "name": "Bundesagentur für Arbeit",
+  "days": 14,
+  "page_size": 100,
+  "query_prefixes": {
+   "thesis": [
+    "Masterarbeit",
+    "Abschlussarbeit",
+    "Master Thesis"
+   ],
+   "student_assistant": [
+    "Studentische Hilfskraft",
+    "Student Assistant"
+   ],
+   "working_student": [
+    "Werkstudent",
+    "Working Student"
+   ],
+   "internship": [
+    "Praktikum",
+    "Internship"
+   ],
+   "trainee": [
+    "Trainee"
+   ],
+   "entry": [
+    "",
+    "Junior",
+    "Berufseinsteiger"
+   ],
+   "mid": [
+    ""
+   ],
+   "senior": [
+    "",
+    "Senior"
+   ]
+  }
+ },
+ "institutions": [
+  {
+   "adapter": "bite_site",
+   "institution": "Technische Universität Hamburg",
+   "pages": [
+    "https://stellenportal.tuhh.de/"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Universitätsklinikum Regensburg",
+   "listings": [
+    "universitaetsklinikum-regensburg-anstalt-oeffentlichen-rechts:counter-listing",
+    "universitaetsklinikum-regensburg-anstalt-oeffentlichen-rechts:main-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Universität Passau",
+   "listings": [
+    "universitaet-passau:ausbildungsstellen-listing",
+    "universitaet-passau:lehrkraefte-listing",
+    "universitaet-passau:verbeamtet-listing",
+    "universitaet-passau:verwaltung-bibliothek-technisches-personal-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Katholische Universität Eichstätt-Ingolstadt",
+   "listings": [
+    "katholische-universitaet-eichstaett-ingolstadt:it-listing",
+    "katholische-universitaet-eichstaett-ingolstadt:professuren-listing",
+    "katholische-universitaet-eichstaett-ingolstadt:wissenschaftliches-personal-listing",
+    "katholische-universitaet-eichstaett-ingolstadt:wissenschaftsunterstuetzendes-personal-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Ruhr-Universität Bochum",
+   "listings": [
+    "ruhr-universitaet-bochum:main-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Universität Kassel",
+   "listings": [
+    "uni-kassel:atm",
+    "uni-kassel:ausbildung",
+    "uni-kassel:prof",
+    "uni-kassel:stipendien",
+    "uni-kassel:wimi"
+   ]
+  },
+  {
+   "adapter": "bite_site",
+   "institution": "Universität Kassel",
+   "pages": [
+    "https://stellen.uni-kassel.de/"
+   ]
+  },
+  {
+   "adapter": "bite_site",
+   "institution": "RPTU Kaiserslautern-Landau",
+   "pages": [
+    "https://jobs.rptu.de/"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Technische Universität Clausthal",
+   "listings": [
+    "technische-universitaet-clausthal:ausbildung-listing",
+    "technische-universitaet-clausthal:professuren-listing",
+    "technische-universitaet-clausthal:studentische-hilfskraefte-listing",
+    "technische-universitaet-clausthal:technischer-verwaltungsdienst-listing",
+    "technische-universitaet-clausthal:wissenschaftlicher-dienst-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Tierärztliche Hochschule Hannover",
+   "listings": [
+    "tieraerztliche-hs-hannover:internship",
+    "tieraerztliche-hs-hannover:main-listing",
+    "tieraerztliche-hs-hannover:promo",
+    "tieraerztliche-hs-hannover:student",
+    "tieraerztliche-hs-hannover:technik",
+    "tieraerztliche-hs-hannover:wissenschaft"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Universität zu Lübeck",
+   "listings": [
+    "universitaet-zu-luebeck:ausbildung-listing",
+    "universitaet-zu-luebeck:hochschullehrende-hochschulleitung-listing",
+    "universitaet-zu-luebeck:technisch-administratives-personal-listing",
+    "universitaet-zu-luebeck:wissenschaftliches-personal-listing"
+   ]
+  },
+  {
+   "adapter": "bite_site",
+   "institution": "Universität Leipzig",
+   "pages": [
+    "https://uni-leipzig.b-ite.careers/"
+   ]
+  },
+  {
+   "adapter": "bite_site",
+   "institution": "Technische Universität Chemnitz",
+   "pages": [
+    "https://jobs.tu-chemnitz.de/"
+   ]
+  },
+  {
+   "adapter": "bite_site",
+   "institution": "Friedrich-Schiller-Universität Jena",
+   "pages": [
+    "https://jobs.uni-jena.de/"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Technische Universität Ilmenau",
+   "listings": [
+    "tu-ilmenau:main-listing-v5"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Universität Rostock",
+   "listings": [
+    "universitaet-rostock:niid"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "BTU Cottbus-Senftenberg",
+   "listings": [
+    "brandenburgische-technische-universitaet-cottbus-senftenberg:main-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "OTH Regensburg",
+   "listings": [
+    "oth-regensburg:main-listing"
+   ]
+  },
+  {
+   "adapter": "bite_site",
+   "institution": "OTH Regensburg",
+   "pages": [
+    "https://karriere.oth-regensburg.de/"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Landshut",
+   "listings": [
+    "hs-landshut:lfba",
+    "hs-landshut:niwi",
+    "hs-landshut:professuren",
+    "hs-landshut:wimi"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "TH Ingolstadt",
+   "listings": [
+    "thi:hochschulleitung",
+    "thi:niwi-listing",
+    "thi:professuren-listing",
+    "thi:wissenschaftliche-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Neu-Ulm",
+   "listings": [
+    "hs-neu-ulm:main-listing-v5"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Biberach",
+   "listings": [
+    "hochschule-biberach:mitarbeiter",
+    "hochschule-biberach:professur"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Mannheim",
+   "listings": [
+    "hs-mannheim:stellenangebote-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Reutlingen",
+   "listings": [
+    "hochschule-reutlingen:main-listing"
+   ]
+  },
+  {
+   "adapter": "adsapi",
+   "institution": "TH Ostwestfalen-Lippe",
+   "url": "https://jobs.b-ite.com/adsapi/jobads?apikey=4ce727a22537cda2cdd2ef39ae55fad5e1a8c08c"
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Westfälische Hochschule",
+   "listings": [
+    "westfaelische-hs:auszubildende-listing",
+    "westfaelische-hs:nicht-wissenschaftliche-listing",
+    "westfaelische-hs:professuren-listing",
+    "westfaelische-hs:wissenschaftliche-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "TH Mittelhessen",
+   "listings": [
+    "hs-mittelhessen:ausbildung",
+    "hs-mittelhessen:professuren",
+    "hs-mittelhessen:wissenschaftlich"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Darmstadt",
+   "listings": [
+    "hochschule-darmstadt:main-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Zittau/Görlitz",
+   "listings": [
+    "hochschule-zittau-goerlitz:main-listing"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Kaiserslautern",
+   "listings": [
+    "hochschule-kaiserslautern:intranet-listing-0"
+   ]
+  },
+  {
+   "adapter": "bite_api",
+   "institution": "Hochschule Trier",
+   "listings": [
+    "hochschule-trier-university-of-applied-sciences:main-listing"
+   ]
+  },
+  {
+   "adapter": "rss",
+   "institution": "Freie Universität Berlin",
+   "url": "https://www.fu-berlin.de/universitaet/beruf-karriere/jobs/english/index.rss"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Universität Tübingen",
+   "url": "https://uni-tuebingen.de/universitaet/karriere/freie-stellen/feed.xml"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Technische Universität München",
+   "url": "https://portal.mytum.de/asRss"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+   "url": "https://www.jobs.fau.de/feed/"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Universitätsmedizin Mainz",
+   "url": "https://www.unimedizin-mainz.de/rss_jobs/rss.xml"
+  },
+  {
+   "adapter": "sap_rss",
+   "institution": "Medizinische Hochschule Hannover (MHH)",
+   "url": "https://mhh.jobs.hr.cloud.sap/services/rss/category/?catid=9519255"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Universität Bremen",
+   "url": "https://www.uni-bremen.de/universitaet/die-uni-als-arbeitgeber/offene-stellen/rss.xml"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Universität Bremen",
+   "url": "https://www.uni-bremen.de/universitaet/organisation/beratungsstellen/rss.xml"
+  },
+  {
+   "adapter": "sap_rss",
+   "institution": "Universitätsklinikum Schleswig-Holstein",
+   "url": "https://jobs.uksh.de/services/rss/category/?catid=4606101"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Universität Leipzig",
+   "url": "https://www.uni-leipzig.de/universitaet/arbeiten-an-der-universitaet-leipzig/stellenausschreibungen/feed"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Technische Universität München (HiWi board)",
+   "url": "https://portal.mytum.de/schwarzesbrett/hiwi_stellen/asRss"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Technische Universität München (thesis board)",
+   "url": "https://portal.mytum.de/schwarzesbrett/diplomarbeiten/asRss"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Universität Duisburg-Essen (SHK)",
+   "url": "https://www.uni-due.de/stellenmarkt/shk_an_der_ude.rss"
+  },
+  {
+   "adapter": "rss",
+   "institution": "Universität Duisburg-Essen (WHK)",
+   "url": "https://www.uni-due.de/stellenmarkt/wissenschaftliche_hilfskraefte.rss"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Greifswald (Hilfskräfte)",
+   "url": "https://www.uni-greifswald.de/universitaet/information/stellenausschreibungen/hilfskraefte",
+   "include": "stellenausschreibung/n/"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bremen (studentische Hilfskräfte)",
+   "url": "https://www.uni-bremen.de/universitaet/die-uni-als-arbeitgeber/offene-stellen",
+   "include": "Studentische_Hilfskraefte|studentische|hilfskr|student assistant"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Charité – Universitätsmedizin Berlin",
+   "url": "https://karriere.charite.de/stellenangebote",
+   "include": "stellenangebote/detail"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Bonn",
+   "url": "https://karriereamukb.de/jobs/",
+   "include": "karriereamukb.de/jobs/"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Rostock (Praktika)",
+   "url": "https://www.uni-rostock.de/stellen/praktika/",
+   "include": "stellen"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TU Dresden (SHK/WHK)",
+   "url": "https://tu-dresden.de/tu-dresden/arbeiten-an-der-tud/stellenangebote/stellenangebote?kat=4",
+   "include": "StellAus"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "FAU Erlangen-Nürnberg",
+   "url": "https://www.jobs.fau.de/jobs/",
+   "include": "jobs.fau.de/jobs/"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsmedizin Göttingen (Praktika)",
+   "url": "https://www.umg.eu/karriere/praktika/",
+   "include": "karriere"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Stellenwerk Stuttgart",
+   "url": "https://www.stellenwerk.de/stuttgart",
+   "include": "stellenwerk.de/stuttgart/"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Stellenwerk Göttingen",
+   "url": "https://www.stellenwerk-goettingen.de/l",
+   "include": "stellenwerk"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "RWTH Aachen (Stellenangebote)",
+   "url": "https://www.rwth-aachen.de/cms/root/Die-RWTH/Arbeiten-an-der-RWTH/~edmv/Stellenangebote",
+   "include": "rwth-aachen"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "UK Aachen (Studierende)",
+   "url": "https://www.ukaachen.de/stellenangebote/studierende-und-hochschulabsolventen/",
+   "include": "stellenangebote"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Charité – Universitätsmedizin Berlin / BIH",
+   "url": "https://karriere.charite.de/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Karlsruher Institut für Technologie (KIT) / Analytics and Statistics",
+   "url": "https://as.ior.kit.edu/364.php",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Konstanz / Mathematik und Statistik",
+   "url": "https://www.uni-konstanz.de/personalabteilung/stellenangebote-1/stellenangebote-der-universitaet-konstanz/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Konstanz / Mathematik und Statistik",
+   "url": "https://www.uni-konstanz.de/personalabteilung/stellenangebote-1/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Konstanz / Biologie",
+   "url": "https://www.biologie.uni-konstanz.de/beratung-und-service/jobs-abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Konstanz / Biologie",
+   "url": "https://www.biologie.uni-konstanz.de/beratung-und-service/hiwi-und-tutorinnen-boerse/hiwi-details/hiwi-opportunity-unravelling-gibbon-and-siamang-tracks-from-historical-maps-1/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Freiburg / Institut für Medizinische Biometrie und Statistik",
+   "url": "https://www.uniklinik-freiburg.de/karriere/stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Freiburg / Institut für Medizinische Biometrie und Statistik",
+   "url": "https://www.uniklinik-freiburg.de/karriere/stellenangebote/job-newsletter.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Ulm / Statistik",
+   "url": "https://www.uni-ulm.de/karriere/#c1126414",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Ulm / Psychological Data Science",
+   "url": "https://www.uni-ulm.de/in/fakultaet/fakultaet/aktuelles/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Ulm / Medizin",
+   "url": "https://www.uni-ulm.de/medizinische-fakultaet/akademische-laufbahn-und-karriere/aktuelle-stellenausschreibungen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Ulm / Graduate School (International Graduate School in ",
+   "url": "https://www.uni-ulm.de/en/career/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Ulm / Graduate School (International Graduate School in ",
+   "url": "https://www.uni-ulm.de/en/career/technical-services-administration/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Ulm / Ringseminar Methoden der Epidemiologie, Biometrie ",
+   "url": "https://www.uni-ulm.de/med/epidemiologie-biometrie/institut/aktuelles/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität des Saarlandes / Datenmanagement",
+   "url": "https://www.uni-saarland.de/verwaltung/stellen.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Stuttgart / Stuttgart Research Center Systems Biology (SRCSB)",
+   "url": "https://www.student.uni-stuttgart.de/en/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Stuttgart / Statistik für komplexe Simulationen Artikel 01.10.",
+   "url": "https://www.beschaeftigte.uni-stuttgart.de/lehre/studienorganisation/campus-anleitungen/pruefungsverwaltung/meine-abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Stuttgart / Statistik für komplexe Simulationen Artikel 01.10.",
+   "url": "https://www.beschaeftigte.uni-stuttgart.de/uni-services/personal/bewerbungssystem-joinus/anleitung/stellenausschreibungen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Stuttgart / Institut für Modellierung und Simulation Biomechan",
+   "url": "https://www.imsb.uni-stuttgart.de/institute/news/news/Job-offer-at-our-Institute/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Stuttgart / Institut für Modellierung und Simulation Biomechan",
+   "url": "https://www.imsb.uni-stuttgart.de/de/lehre/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Stuttgart / Forschungsdatenmanagement",
+   "url": "https://www.izus.uni-stuttgart.de/jahresbericht-2025/lehre/campus-neue-eigenentwicklung-zur-digitalen-ausschreibung-von-abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Heidelberg / Field Epidemiology Research in German Public Healt",
+   "url": "https://www.klinikum.uni-heidelberg.de/heidelberger-institut-fuer-global-health/welcome/about-us/job-offers",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Heidelberg / Field Epidemiology Research in German Public Healt",
+   "url": "https://www.klinikum.uni-heidelberg.de/karriere",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Albert-Ludwigs-Universität Freiburg / chevron-right Webseite der Fakultät für Biologie",
+   "url": "https://uni-freiburg.de/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Albert-Ludwigs-Universität Freiburg / chevron-right Webseite der Fakultät für Biologie",
+   "url": "https://intranet.uni-freiburg.de/path/app/?qs_page=DCD94253ECF771641D707E2BF8F7C6D49CD43F04",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Potsdam / ZIM – Zentrum für IT und Medien",
+   "url": "https://www.uni-potsdam.de/de/verwaltung/dezernat3/stellenausschreibungen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Potsdam / ZIM – Zentrum für IT und Medien",
+   "url": "https://www.uni-potsdam.de/de/verwaltung/dezernat3/stellenausschreibungen/interessensbekundungsverfahren",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Potsdam / Und wat machste dann damit? Die Berufsorientierung",
+   "url": "https://www.uni-potsdam.de/de/philfak/studiumlehre/qualitaetsmanagement/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität München / Register",
+   "url": "https://portal.mytum.de/jobs/index_html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Hamburg / Forschungsmethoden und Statistik",
+   "url": "https://www.psy.uni-hamburg.de/service/stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Hamburg / Forschungsmethoden und Statistik",
+   "url": "https://www.psy.uni-hamburg.de/arbeitsbereiche/biologische-psychologie-und-neuropsychologie/stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Tübingen / Experimentelle und Klinische Pharmakologie und Pha",
+   "url": "https://www.medizin.uni-tuebingen.de/de/karriere",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Tübingen / Experimentelle und Klinische Pharmakologie und Pha",
+   "url": "https://jobs.medizin.uni-tuebingen.de/Jobs",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Erlangen / Apotheke",
+   "url": "https://www.karriere.uk-erlangen.de/bewerbung/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Erlangen / Apotheke",
+   "url": "https://www.karriere.uk-erlangen.de/bewerbung/stellenangebote?hierarchy=38999109",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Regensburg / Zentrum für Klinische Studien (ZKS)",
+   "url": "https://www.ukr.de/ausbildung-karriere/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Regensburg / Zentrum für Klinische Studien (ZKS)",
+   "url": "https://www.ukr.de/ausbildung-karriere/stellenangebote/externe-partner",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Katholische Universität Eichstätt-Ingolstadt / Mathematischen Institut für Maschinelles Lernen un",
+   "url": "https://www.ku.de/die-ku/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität Hamburg / Stabsstelle Campus- und Datenmanagement",
+   "url": "https://www.tuhh.de/tuhh/tu-hamburg/arbeiten-an-der-tu-hamburg/stellenausschreibungen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Julius-Maximilians-Universität Würzburg / Medizin",
+   "url": "https://www.med.uni-wuerzburg.de/service/jobs-fuer-studierende/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Julius-Maximilians-Universität Würzburg / Medizin",
+   "url": "https://www.med.uni-wuerzburg.de/service/stellenausschreibungen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Julius-Maximilians-Universität Würzburg / Life Sciences",
+   "url": "https://www.graduateschools.uni-wuerzburg.de/life-sciences/doctoral-researchers/thesis-regulations-and-submission/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Statistik & Wirtschaftsmathematik",
+   "url": "https://www.uni-bamberg.de/stat-oek/studium/abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Statistik & Wirtschaftsmathematik",
+   "url": "https://www.uni-bamberg.de/wima/studium/studiumabschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Bewerbung und Zulassung",
+   "url": "https://www.uni-bamberg.de/pruefungsamt/abschlussarbeiten-informationen-zur-anmeldung-und-abgabe/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Prof. Jon Smith (2018)",
+   "url": "https://www.uni-bamberg.de/amerikanistik/studium/betreuung-von-abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Bewerbung, Zulassung und Einschreibung",
+   "url": "https://www.uni-bamberg.de/denkmalpflege/team/studentische-hilfskraefte/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Bewerbung, Zulassung und Einschreibung",
+   "url": "https://www.uni-bamberg.de/ddt/team/hilfskraefte-der-ddt/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Zulassung und Einschreibung",
+   "url": "https://www.uni-bamberg.de/iadk/kunstgeschichte/fuer-studierende/diathekstudentische-hilfskraefte/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Zulassung und Einschreibung",
+   "url": "https://www.uni-bamberg.de/kunstgesch1/forschung/abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Zulassung und Einschreibung",
+   "url": "https://www.uni-bamberg.de/evtheo/studium/seminararbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bamberg / Zulassung und Einschreibung",
+   "url": "https://www.uni-bamberg.de/evtheo/studium/seminararbeiten/hausarbeiten-1/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Würzburg / ZIM (Zentrum Innere Medizin)",
+   "url": "https://www.ukw.de/karriere/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Regensburg / Chemie und Pharmazie",
+   "url": "https://www.uni-regensburg.de/universitaet/jobs-und-karriere/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Regensburg / Chemie und Pharmazie",
+   "url": "https://www.uni-regensburg.de/universitaet/jobs-und-karriere/die-ur-als-arbeitgeberin",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Regensburg / Informatik und Data Science",
+   "url": "https://www.uni-regensburg.de/informatik-data-science/fakultaet/offene-stellen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Regensburg / Informatik und Data Science",
+   "url": "https://www.uni-regensburg.de/informatik-data-science/fakultaet/offene-stellen/shks",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Passau / ZIM",
+   "url": "https://www.uni-passau.de/universitaet/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Passau / ZIM",
+   "url": "https://www.uni-passau.de/careersup",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Westfälische Wilhelms-Universität Münster / Chemie und Pharmazie",
+   "url": "https://www.uni-muenster.de/Rektorat/Stellen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Westfälische Wilhelms-Universität Münster / Chemie und Pharmazie",
+   "url": "https://www.uni-muenster.de/Rektorat/Stellen/index-assistants.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Uniklinik RWTH Aachen / AI crosss Medicine Aachen (Alx.Med)",
+   "url": "https://www.ukaachen.de/stellenangebote/stellenmarkt/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Uniklinik RWTH Aachen / Innere Medizin",
+   "url": "https://www.ukaachen.de/kliniken-institute/klinik-fuer-kardiologie-angiologie-und-internistische-intensivmedizin-med-klinik-i/lehre/abschlussarbeiten-promotionsarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Uniklinik RWTH Aachen / NGS-Zentrum",
+   "url": "https://www.ukaachen.de/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Augsburg / Koordinierungsstelle Klinische Studien (KKS)",
+   "url": "https://www.uni-augsburg.de/de/jobs-und-karriere/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Augsburg / Koordinierungsstelle Klinische Studien (KKS)",
+   "url": "https://www.uni-augsburg.de/de/fakultaet/jura/stellen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Klinikum der Universität München / Medizin & Pflege",
+   "url": "https://www.lmu-klinikum.de/pflege/stellenanzeigen/4ed4ea4a9cbc4721",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Münster / Medizin",
+   "url": "https://www.ukm.de/karrierebereiche",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Mannheim / Mannheim Center for Data Science (MCDS)",
+   "url": "https://www.uni-mannheim.de/universitaet/arbeiten-an-der-universitaet/stellenanzeigen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Mannheim / Mannheim Center for Data Science (MCDS)",
+   "url": "https://www.uni-mannheim.de/universitaet/arbeiten-an-der-universitaet/job-insights-berufe-an-der-uni/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Mannheim / Dr. Parker Smith",
+   "url": "https://www.uni-mannheim.de/smip/program/possible-thesis-topics/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Mannheim / Dr. Parker Smith",
+   "url": "https://www.uni-mannheim.de/smip/publications/doctoral-dissertations/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Duisburg-Essen / Zentrum für Informations- & Mediendienste (ZIM)",
+   "url": "https://www.uni-due.de/zim/karriere.php",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Duisburg-Essen / Medizin & Gesundheitswissenschaften",
+   "url": "https://www.uni-due.de/karriere/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Bonn / Genomische Statistik und Bioinformatik (IGSB)",
+   "url": "https://www.ukbonn.de/jobs-karriere/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Bonn / Genomische Statistik und Bioinformatik (IGSB)",
+   "url": "https://karriereamukb.de/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Ruhr-Universität Bochum / Statistik (Daten und Fakten zur RUB)",
+   "url": "https://uni.ruhr-uni-bochum.de/de/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Ruhr-Universität Bochum / Statistik (Daten und Fakten zur RUB)",
+   "url": "https://uni.ruhr-uni-bochum.de/de/stellenangebote-unserer-partner",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Ruhr-Universität Bochum / Bewerbung, Zulassung und Einschreibung für interna",
+   "url": "https://international.ruhr-uni-bochum.de/de/jobs-und-praktika-im-international-office",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Ruhr-Universität Bochum / Biochemie und Chemie (Fakultät)",
+   "url": "https://chemie.ruhr-uni-bochum.de/fakult%C3%A4t/%C3%BCber-uns/stellenausschreibungen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Ruhr-Universität Bochum / Biochemie und Chemie (Fakultät)",
+   "url": "https://moodle.ruhr-uni-bochum.de/mod/resource/view.php?id=2743439",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Ruhr-Universität Bochum / Biologie und Biotechnologie (Fakultät)",
+   "url": "https://www.biologie.ruhr-uni-bochum.de/biodek/studium/biologie-im-beruf.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Ruhr-Universität Bochum / Biologie und Biotechnologie (Fakultät)",
+   "url": "https://uni.ruhr-uni-bochum.de/en/vacancies",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "RWTH Aachen / Research Data Management",
+   "url": "https://www.rwth-aachen.de/cms/root/studium/Im-Studium/~rms/Angebote-fuer-Studierende/lidx/1/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg / Department Chemie und Pharmazie",
+   "url": "https://www.chemie.nat.fau.de/stellenanzeigen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg / Chemie und Pharmazie",
+   "url": "https://www.fau.de/studium/studienorganisation/wege-ins-ausland/finanzierung-eines-auslandsaufenthaltes/foerdermoeglichkeiten-fuer-praktika-und-abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Friedrich-Alexander-Universität Erlangen-Nürnberg / Gesundheitsmärkte, Digital Health",
+   "url": "https://www.jobs.fau.de/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bielefeld / Centrum für Biotechnologie (CeBiTec)",
+   "url": "https://www.uni-bielefeld.de/fakultaeten/technische-fakultaet/fakultaet/stellen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bielefeld / Centrum für Biotechnologie (CeBiTec)",
+   "url": "https://www.uni-bielefeld.de/fakultaeten/technische-fakultaet/fakultaet/stellen/hilfskraefte/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bielefeld / Centrum für Biotechnologie (CeBiTec)",
+   "url": "https://www.cebitec.uni-bielefeld.de/job-advertisements",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bielefeld / Centrum für Biotechnologie (CeBiTec)",
+   "url": "https://www.uni-bielefeld.de/uni/karriere/index.xml",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bielefeld / Genetik und Genomik der Pflanzen - Bernd Weisshaar",
+   "url": "https://www.uni-bielefeld.de/uni/karriere/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Bielefeld / Genetik und Genomik der Pflanzen - Bernd Weisshaar",
+   "url": "https://www.uni-bielefeld.de/verwaltung/dezernat-p-o/dokumente/hk-lehrbeauftragte/infos-hk/index.xml",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "FernUniversität in Hagen / BWL, insb. Angewandte Statistik",
+   "url": "https://www.fernuni-hagen.de/angewandte-statistik/jobs.shtml",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "FernUniversität in Hagen / BWL, insb. Angewandte Statistik",
+   "url": "https://www.fernuni-hagen.de/angewandte-statistik/lehre/abschlussarbeiten.shtml",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "FernUniversität in Hagen / Data Science",
+   "url": "https://www.fernuni-hagen.de/ds/lehre/abschlussarbeiten/index.shtml",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "FernUniversität in Hagen / Data Science",
+   "url": "https://www.fernuni-hagen.de/ds/lehre/abschlussarbeiten/themen/index.shtml",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Hamburg-Eppendorf (UKE) / Universitäres Centrum für 3D-Druck in der Medizin ",
+   "url": "https://www.uke.de/studium-lehre/studentische-projekte/index.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Hamburg-Eppendorf (UKE) / Universitäres Centrum für 3D-Druck in der Medizin ",
+   "url": "https://www.uke.de/kliniken-institute/zentren/universit%C3%A4res-herzzentrum-(uhz)/herzjobs-wir-suchen-dich!/index.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Hamburg-Eppendorf (UKE) / Versorgungsforschung & Public Health",
+   "url": "https://www.uke.de/karriere/berufe-jobs-im-uke/index.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Hamburg-Eppendorf (UKE) / Versorgungsforschung & Public Health",
+   "url": "https://www.uke.de/karriere/berufe-jobs-im-uke/stellenangebote-und-bewerbung/index.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Bergische Universität Wuppertal / Bergisches Kompetenzzentrum für Gesundheitsökonomi",
+   "url": "https://gesundheit.uni-wuppertal.de/de/lehre/abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Justus-Liebig-Universität Gießen / ZAD - Zentrum für Angewandte Informatik und Data S",
+   "url": "https://www.uni-giessen.de/de/ueber-uns/karriere",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Justus-Liebig-Universität Gießen / ZAD - Zentrum für Angewandte Informatik und Data S",
+   "url": "https://jobs.uni-giessen.de/_/career",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "RPTU Kaiserslautern-Landau / Forschungsdatenmanagement",
+   "url": "https://rptu.de/ueber-die-rptu/rptu-als-arbeitgeberin/stellenangebote-und-karriere",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "RPTU Kaiserslautern-Landau / Forschungsdatenmanagement",
+   "url": "https://rptu.de/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Philipps-Universität Marburg / 16 Pharmazie",
+   "url": "https://www.uni-marburg.de/de/fb16/bewerbung",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Philipps-Universität Marburg / 16 Pharmazie",
+   "url": "https://www.uni-marburg.de/de/fb16/bewerbung/hilfskraefte",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Philipps-Universität Marburg / 17 Biologie",
+   "url": "https://www.uni-marburg.de/de/fb17/fachbereich/personen/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Philipps-Universität Marburg / 20 Medizin",
+   "url": "https://www.uni-marburg.de/de/fb20/studium/studentische_hilfskraft",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Philipps-Universität Marburg / Forschungsdatenmanagement",
+   "url": "https://www.uni-marburg.de/de/universitaet/profil/universitaetskultur/karriere/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Paderborn / Forschungsdatenmanagement",
+   "url": "https://www.uni-paderborn.de/zv/4-4/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Paderborn / Forschungsdatenmanagement",
+   "url": "https://www.uni-paderborn.de/universitaet/vertretung-der-belange-studentischer-hilfskraefte",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Paderborn / Lehr- und Studienzentrum",
+   "url": "https://wiwi.uni-paderborn.de/studienorganisation/studienorganisation/studienphasen-und-prozesse/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Paderborn / Lehr- und Studienzentrum",
+   "url": "https://wiwi.uni-paderborn.de/stellenausschreibungen-1",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Paderborn / Zulassung zum Studium",
+   "url": "https://mb.uni-paderborn.de/studium/studienelemente/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Paderborn / Datenmanagement im Maschinenbau",
+   "url": "https://mb.uni-paderborn.de/dmb/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Frankfurt / Zentrum der Pharmakologie",
+   "url": "https://www.unimedizin-ffm.de/einrichtungen/institute/zentrum-der-pharmakologie/institut-fuer-allgemeine-pharmakologie-und-toxikologie/stellenausschreibungen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Frankfurt / Zentrum der Inneren Medizin",
+   "url": "https://www.unimedizin-ffm.de/einrichtungen/zentren/frankfurter-referenzzentrum-fuer-seltene-erkrankungen-frzse/fuer-studierende/mitarbeit-in-der-studentenklinik",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Frankfurt / Zentrum der Inneren Medizin",
+   "url": "https://www.unimedizin-ffm.de/einrichtungen/kliniken/zentrum-der-inneren-medizin/medizinische-klinik-2-haematologie-onkologie-haemostaseologie-rheumatologie-infektiologiehiv/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Frankfurt / Datenintegrationszentrum (DIZ)",
+   "url": "https://www.unimedizin-ffm.de/ueber-uns/vorstand-des-universitaetsklinikums/kaufmaennische-direktion/apotheke/stellenmarkt-informationen-fuer-phips-und-famulanten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Kassel / Lenkungsausschuss Forschungsdatenmanagement",
+   "url": "https://www.uni-kassel.de/uni/universitaet/stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Kassel / Lenkungsausschuss Forschungsdatenmanagement",
+   "url": "https://www.uni-kassel.de/uni/studium/kontakt-und-beratung/servicestellen/career-service/jobs-praktika/jobportal-der-uni-kassel.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsmedizin Göttingen / Institut für Medizinische Informatik Direktorin: P",
+   "url": "https://medizininformatik.umg.eu/studium-lehre/praktika-und-abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsmedizin Göttingen / Institut für Medizinische Informatik Direktorin: P",
+   "url": "https://medizininformatik.umg.eu/karriere/stellenangebote-im-institut/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Tierärztliche Hochschule Hannover / Institut für Pharmakologie, Toxikologie und Pharma",
+   "url": "https://www.tiho-hannover.de/universitaet/karriere/tiho-stellenmarkt",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Tierärztliche Hochschule Hannover / Institut für Biometrie, Epidemiologie und Informat",
+   "url": "https://www.tiho-hannover.de/institut-fuer-biometrie-epidemiologie-und-informationsverarbeitung/uebersicht/stellenausschreibungen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsmedizin Mainz / IMB-Forschende werfen neues Licht auf die Genetik ",
+   "url": "https://www.unimedizin-mainz.de/jobs/die-um-als-arbeitgeberin/aktuelle-stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsmedizin Mainz / IMB-Forschende werfen neues Licht auf die Genetik ",
+   "url": "https://www.unimedizin-mainz.de/jobs/die-um-als-arbeitgeberin/aktuelle-stellenangebote/stellenangebote-tochterunternehmen.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Heinrich-Heine-Universität Düsseldorf / FAQ Pharmazie",
+   "url": "https://www.hhu.de/studium/berufseinstieg/campusmesse/informationen-fuer-studierende-und-absolventen/masterberatung",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Heinrich-Heine-Universität Düsseldorf / Biologie",
+   "url": "https://www.biologie.hhu.de/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Heinrich-Heine-Universität Düsseldorf / Biologie",
+   "url": "https://www.biologiestudium.hhu.de/studium/studierende/jobs-fuer-biologie-studenten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Schleswig-Holstein / UKSH als Arbeitgeber Spitzenmedizin, Innovation un",
+   "url": "https://www.uksh.de/jobs/T%C3%A4tigkeitsbereiche/Pflege/Stellenangebote+Pflege.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Schleswig-Holstein / UKSH als Arbeitgeber Spitzenmedizin, Innovation un",
+   "url": "https://www.uksh.de/jobs/T%25C3%25A4tigkeitsbereiche/Pflege/Stellenangebote%2BPflege.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Schleswig-Holstein / Medizin",
+   "url": "https://www.uksh.de/Pflege/Stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Schleswig-Holstein / Medizin",
+   "url": "https://www.uksh.de/Pflege/Stellenangebote-p-181953.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Dresden / Psychosoziale Medizin und Entwicklungsneurowissens",
+   "url": "https://www.uniklinikum-dresden.de/de/das-klinikum/kliniken-polikliniken-institute/psm/Karriere/shkwhk",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Dresden / Klinische Studien",
+   "url": "https://www.uniklinikum-dresden.de/de/das-klinikum/krankenpflege/jobs-und-karriere",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Dresden / Klinische Studien",
+   "url": "https://www.uniklinikum-dresden.de/de/das-klinikum/krankenpflege/jobs-und-karriere/studentische-hilfskraefte-und-sitzwachen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Christian-Albrechts-Universität zu Kiel / Master of Science in Molecular Biology & Evolution",
+   "url": "https://www.biologie.uni-kiel.de/en/studying/masters-thesis",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Leibniz Universität Hannover / Institut für Data Science",
+   "url": "https://www.idas.uni-hannover.de/kbs/studium/arbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität Dresden / Stellenangebote am BIOTEC",
+   "url": "https://tu-dresden.de/tu-dresden/arbeiten-an-der-tud/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität Dresden / Stellenangebote am BIOTEC",
+   "url": "https://tu-dresden.de/tu-dresden/arbeiten-an-der-tud/stellenangebote/stellenangebote?suche=1&style=cms2&lang=de",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Leipzig / Institut für Biochemie",
+   "url": "https://www.lw.uni-leipzig.de/institut-fuer-biochemie/studium",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Martin-Luther-Universität Halle-Wittenberg / Forschungsdatenmanagement",
+   "url": "https://bibliothek.uni-halle.de/ueber-uns/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Leipzig / Pharmazie",
+   "url": "https://karriere.uniklinikum-leipzig.de/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Leipzig / Medical Data Science",
+   "url": "https://www.uniklinikum-leipzig.de/einrichtungen/miz/Seiten/mds-promotion-und-abschlussarbeiten.aspx",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Leipzig / Medical Data Science",
+   "url": "https://www.uniklinikum-leipzig.de/einrichtungen/miz/mds/promotion-abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Hildesheim / Forschungsdatenmanagement",
+   "url": "https://www.uni-hildesheim.de/universitaet/karriere-weiterbildung/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität Braunschweig / Institut für Pharmakologie, Toxikologie u. Klinisc",
+   "url": "https://www.tu-braunschweig.de/international-house/stellenausschreibungen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität Braunschweig / Institut für Pharmakologie, Toxikologie u. Klinisc",
+   "url": "https://www.tu-braunschweig.de/stellenmarkt",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Erfurt / Bewerbung, Zulassung, Einschreibung",
+   "url": "https://www.uni-erfurt.de/universitaet/arbeiten-an-der-universitaet/stellenausschreibungen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität zu Lübeck / Institut für Medizinische Biometrie und Statistik",
+   "url": "https://www.imbs.uni-luebeck.de/lehre/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität zu Lübeck / Institut für Medizinische Informatik",
+   "url": "https://www.imi.uni-luebeck.de/lehre/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität zu Lübeck / Institut für Medizinische Informatik",
+   "url": "https://www.imi.uni-luebeck.de/lehre/abschlussarbeiten/offene-themen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität zu Lübeck / Institut für Chemie und Metabolomics",
+   "url": "https://www.chemie.uni-luebeck.de/lehre/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität zu Lübeck / Institut für Chemie und Metabolomics",
+   "url": "https://www.chemie.uni-luebeck.de/lehre/abschlussarbeiten/fertige-abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Trier / Zulassung und Einschreibung",
+   "url": "https://www.uni-trier.de/universitaet/verwaltung/abteilung-iii-personal/jobs",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Trier / Zentrum für Kanada-Studien (ZKS)",
+   "url": "https://www.uni-trier.de/universitaet/fachbereiche-faecher/fachbereich-ii/faecher/anglistik/studium/auslandsaufenthalte/work-abroad/internships-and-jobs",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Trier / LIMES-Kolloquium 2026",
+   "url": "https://www.uni-trier.de/universitaet/fachbereiche-faecher/fachbereich-ii/faecher/romanistik/studium/pruefungen/hausarbeiten-und-abschlussarbeiten-ba/ma",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Jena / Website des Instituts für Medizinische Statistik, ",
+   "url": "https://www.uniklinikum-jena.de/Beruf+_+Karriere/Stellenangebote/Alle+Stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universitätsklinikum Jena / Klinische Studien",
+   "url": "https://www.uniklinikum-jena.de/ism.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "OTH Regensburg / Forum Medizinische Informatik 24. April 2024 Mehr ",
+   "url": "https://www.oth-regensburg.de/die-oth/jobs-und-karriere",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "OTH Regensburg / Forum Medizinische Informatik 24. April 2024 Mehr ",
+   "url": "https://www.oth-regensburg.de/die-oth/jobs-und-karriere/wir-suchen/shks-tuts",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Greifswald / Pharmazie",
+   "url": "https://www.uni-greifswald.de/universitaet/information/stellenausschreibungen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Greifswald / Data Science",
+   "url": "https://datascience.uni-greifswald.de/jobs/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Mannheim / Biologische Chemie & Data Science Bachelor /deutsc",
+   "url": "https://www.biotech.hs-mannheim.de/studierende/abschlussarbeit.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Neu-Ulm / Data Science and Business Analytics",
+   "url": "https://www.hnu.de/forschung/forschungs-und-transfereinrichtungen/afrika-institut/studentische-abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Neu-Ulm / Data Science and Business Analytics",
+   "url": "https://www.hnu.de/internationales/praktikum-und-abschlussarbeit-im-ausland",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Reutlingen / Life Sciences",
+   "url": "https://www.ls.reutlingen-university.de/studium/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Reutlingen / Life Sciences",
+   "url": "https://www.ls.reutlingen-university.de/life-sciences/stellenanzeigen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TU Bergakademie Freiberg / Neue Professoren verstärken Felsmechanik, Keramik ",
+   "url": "https://tu-freiberg.de/Stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TU Bergakademie Freiberg / Neue Professoren verstärken Felsmechanik, Keramik ",
+   "url": "https://tu-freiberg.de/Stellenangebote/wissenschaftliche-mitarbeiter",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TU Bergakademie Freiberg / Informationsseite zum Forschungsdatenmanagement de",
+   "url": "https://tu-freiberg.de/ub/ueber-uns/stellenangebote-ausbildung",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Rostock / Medizin/Life Sciences",
+   "url": "https://www.uni-rostock.de/stellen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Rostock / Medizin/Life Sciences",
+   "url": "https://www.uni-rostock.de/studium/berufseinstieg/careers-service/portalseite-careers-service/stellen-praktika-nebenjobs/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Rostock / Forschungsdatenmanagement",
+   "url": "https://rosdok.uni-rostock.de/site/publish/thesis",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Biberach / Medizinische Biotechnologie, B.Sc.",
+   "url": "https://www.hochschule-biberach.de/hochschule/karriere/offene-stellen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Biberach / Medizinische Biotechnologie, B.Sc.",
+   "url": "https://www.hochschule-biberach.de/international/information-students-fewer-opportunities",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Köln / Bewerbung und Zulassung",
+   "url": "https://www.th-koeln.de/hochschule/stellenangebote_90041.php",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Köln / Forschungsdatenmanagement",
+   "url": "https://epb.bibl.th-koeln.de/home",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule RheinMain / Forschungsdatenmanagement",
+   "url": "https://www.hs-rm.de/ueber-uns/karriere/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Westfälische Hochschule / Informationstechnik des Zentrums für IT und Medien",
+   "url": "https://www.w-hs.de/studium/berufseinstieg/stellen-praktikumsboerse/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Westfälische Hochschule / Informationstechnik des Zentrums für IT und Medien",
+   "url": "https://www.w-hs.de/hochschule/stellenboerse/externe-stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Mittelhessen / Forschungsdatenmanagement",
+   "url": "https://www.thm.de/site/hochschule/profil/job-und-karriere/aktuelle-stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Mittelhessen / Forschungsdatenmanagement",
+   "url": "https://www.thm.de/zekoll/daszentrum/zekoll/tutoring.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Mittelhessen / IBPT - Institut für Bioverfahrenstechnik und Pharm",
+   "url": "https://www.thm.de/lse/fachbereich/organisation/haushalt-studentische-hilfskraefte.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Mittelhessen / INVERE - Willy Robert Pitzer-Institut für Versorgu",
+   "url": "https://www.thm.de/ges/studium/praxis/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Mittelhessen / INVERE - Willy Robert Pitzer-Institut für Versorgu",
+   "url": "https://www.thm.de/ges/studium/praxis/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität Ilmenau / Datenanalyse in den Lebenswissenschaften",
+   "url": "https://www.tu-ilmenau.de/universitaet/karriere/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Technische Universität Ilmenau / Datenanalyse in den Lebenswissenschaften",
+   "url": "https://www.tu-ilmenau.de/studium/nach-dem-studium/berufseinstieg/stellenangebote-der-tu-ilmenau",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "HTW Berlin / Controlling/Statistik",
+   "url": "https://www.htw-berlin.de/karriere/jobs",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "HTW Berlin / Controlling/Statistik",
+   "url": "https://www.htw-berlin.de/karriere/jobs/studentische-hilfskraefte",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Albstadt-Sigmaringen / Data Science",
+   "url": "https://www.hs-albsig.de/hochschule/verwaltung/personalabteilung/aktuelle-stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Albstadt-Sigmaringen / Data Science",
+   "url": "https://www.hs-albsig.de/studienangebot/bachelorstudiengaenge/smart-building-engineering-and-management/working-student/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Weihenstephan-Triesdorf / Deep Health – Neues KI-Modell für Stoffwechselanal",
+   "url": "https://www.hswt.de/arbeiten-an-der-hswt/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Weihenstephan-Triesdorf / Deep Health – Neues KI-Modell für Stoffwechselanal",
+   "url": "https://www.hswt.de/arbeiten-an-der-hswt/stellenangebote/job-alert",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Darmstadt / Chemie- und Biotechnologie",
+   "url": "https://h-da.de/stellen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Darmstadt / Chemie- und Biotechnologie",
+   "url": "https://h-da.de/hochschule/arbeiten-an-der-hochschule/stellenangebote/beschaeftigte",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Darmstadt / Chemie- und Biotechnologie",
+   "url": "https://h-da.de/jobportal",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Anhalt / Data Science",
+   "url": "https://www.hs-anhalt.de/hochschule-anhalt/aktuelles/stellenangebote.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Anhalt / Data Science",
+   "url": "https://www.hs-anhalt.de/hochschule-anhalt/service/arbeiten-an-der-hochschule-anhalt.html",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Ostwestfalen-Lippe / Data Science - Bachelor",
+   "url": "https://www.th-owl.de/studium/im-studium/studentisches-engagement/studentische-projekte/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "TH Ostwestfalen-Lippe / Data Science - Bachelor",
+   "url": "https://www.th-owl.de/hochschule/karriere/stellenangebote/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Mittweida / Mikroskop mit Blatt und Kreuz SVG mit transparente",
+   "url": "https://www.hs-mittweida.de/ueber-uns/karriere/aktuelle-stellenangebote/detail/anlagenmechaniker-instandhalter-gebaeudetechnik-m-w-d-fachrichtung-shk/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Mittweida / Mikroskop mit Blatt und Kreuz SVG mit transparente",
+   "url": "https://www.hs-mittweida.de/ueber-uns/karriere/stellen-jobs-angebote-hochschule/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Hannover / Hochschulinterne Statistik",
+   "url": "https://www.hs-hannover.de/ueber-uns/organisation/bibliothek/literatursuche/abschlussarbeiten",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Hannover / Hochschulinterne Statistik",
+   "url": "https://www.hs-hannover.de/ueber-uns/organisation/servicezentrum-beratung/studienbotschaft/veranstaltungen/zwischen-vorlesung-nebenjob-und-freizeit-unsere-tipps-zum-studienstart",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Hannover / Angewandte Mathematik und Data Science (MAT)",
+   "url": "https://f1.hs-hannover.de/service/stellenboerse-fuer-studierende-absolventen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Hannover / Biotechnologie und Umwelttechnik (BIU)",
+   "url": "https://f2.hs-hannover.de/service/stellenanzeigen",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Hannover / Bewerbung und Zulassung",
+   "url": "https://f3.hs-hannover.de/aktuelles/auszeichnungen/auszeichnungen-new/bdia-ausgezeichnet-vier-abschlussarbeiten-der-innenarchitektur-praemiert",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Hannover / Bewerbung und Zulassung",
+   "url": "https://f3.hs-hannover.de/aktuelles/stellenangebote",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Tübingen / Pharmazie/Biochemie",
+   "url": "https://uni-tuebingen.de/universitaet/karriere/freie-stellen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Tübingen / Pharmazie/Biochemie",
+   "url": "https://uni-tuebingen.de/universitaet/karriere/stellenangebote-veroeffentlichen/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Tübingen / Interfakultäres Institut für Biomedizinische Infor",
+   "url": "https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/interfakultaere-einrichtungen/ibmi/studium/abschlussarbeiten/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Universität Tübingen / Forschungsdatenmanagement (FDM)",
+   "url": "https://uni-tuebingen.de/studium/berufsorientierung/praxisportal-job-und-praktikumsboerse/",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Berliner Hochschule für Technik (BHT) / Medizinische Informatik",
+   "url": "https://www.bht-berlin.de/4066",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Berliner Hochschule für Technik (BHT) / Medizinische Informatik",
+   "url": "https://www.bht-berlin.de/jobs",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Zittau/Görlitz / Forschungsdatenmanagement",
+   "url": "https://www.hszg.de/hochschule/jobs-karriere",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Zittau/Görlitz / Forschungsdatenmanagement",
+   "url": "https://www.hszg.de/hochschule/jobs-karriere/stellenangebote-der-hochschule-zittau/goerlitz",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Emden/Leer / Biotechnologie/Bioinformatik",
+   "url": "https://www.hs-emden-leer.de/studierende/fachbereiche/soziale-arbeit-und-gesundheit/team-und-termine/dezentrale-gleichstellungsbeauftragte/studentische-projekte",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  },
+  {
+   "adapter": "html_list",
+   "institution": "Hochschule Emden/Leer / Biotechnologie/Bioinformatik",
+   "url": "https://www.hs-emden-leer.de/soziale-arbeit-und-gesundheit/praxisreferat/job-und-praktikumsboerse",
+   "include": "hilfskr|hiwi|shk|whk|werkstudent|praktik|abschlussarbeit|masterarbeit|thesis|student|stelle|job"
+  }
+ ]
+}

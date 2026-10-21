@@ -1,0 +1,56 @@
+{
+  "_about": "Extension pack: searching across Europe (EU, EEA, Switzerland, the UK) beyond a home market. List it after your home pack in profile.json, e.g. \"regions\": [\"de\", \"eu\"]: the first pack is the home market, this one widens the scope and adds route rules for the other countries. Route adjustments assume a NON-EU applicant who studies or lives in the home country; an EU citizen needs none (profile work_authorization.status = eu_citizen).",
+  "code": "eu",
+  "name": "Europe (EU, EEA, Switzerland, UK)",
+  "primary_countries": [],
+  "scope_countries": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "NO", "IS", "LI", "CH", "GB"],
+  "local_languages": [],
+  "date_order": "dmy",
+  "currency": "EUR",
+
+  "routes": {
+    "eu_erasmus": "EU, Erasmus+ placement or study-mobility route",
+    "thesis_abroad": "Thesis abroad",
+    "eu_directive_mobility": "EU student mobility (Directive 2016/801)",
+    "employer_permit": "Needs an employer permit",
+    "national_rules": "Country's own national rules (Directive not applied)"
+  },
+
+  "route_rules": [
+    {"when": {"authorization": ["student_visa"], "country": ["DK", "IE"], "kind": ["thesis", "internship", "working_student", "trainee", "student_assistant"]},
+     "adj": -2, "route": "national_rules", "note": "Denmark and Ireland do not apply Directive 2016/801: purely national rules; routes exist but not under the EU mobility rules (-2)"},
+    {"when": {"authorization": ["student_visa"], "country": ["CH", "GB"], "kind": ["thesis"]},
+     "adj": -2, "route": "thesis_abroad", "note": "Outside the Directive: own national rules and quotas; a thesis that is a mandatory part of the degree is the easiest case (-2)"},
+    {"when": {"authorization": ["student_visa"], "country": ["CH", "GB"]},
+     "adj": -3, "route": "none_found", "note": "Outside the Directive: own national rules and tight quotas for non-EU nationals (-3)"},
+    {"when": {"authorization": ["student_visa"], "kind": ["thesis"]},
+     "adj": -1, "route": "thesis_abroad", "note": "Thesis in another EU state: a legal path exists (Art. 31 Directive 2016/801 plus host rules) but needs the university's sign-off, a host notification and a valid permit for the whole stay (-1)"},
+    {"when": {"authorization": ["student_visa"], "kind": ["internship", "trainee", "student_assistant", "working_student"]},
+     "adj": -1, "route": "eu_erasmus", "note": "Placement in another EU state: Erasmus+ or study-mobility route with the university's sign-off and the host state's answer; whether a traineeship counts as study is decided state by state (-1)"},
+    {"when": {"authorization": ["student_visa", "needs_sponsorship", "work_visa"], "kind": ["entry", "mid", "senior"]},
+     "adj": -3, "route": "employer_permit", "note": "A career role abroad needs an employer-sponsored permit (skilled-worker or Blue Card route, salary thresholds differ per country): -3 unless the posting says it sponsors"},
+    {"when": {"authorization": ["needs_sponsorship", "work_visa"]},
+     "adj": -3, "route": "employer_permit", "note": "Needs the host country's work permit: no named route (-3)"}
+  ],
+  "route_default": {"adj": -3, "route": "unknown", "note": "A role in another country with no stated route for a non-EU applicant (-3)"},
+
+  "walls": [
+    {"label": "EU citizenship or a named national university required", "re": "\\b(eu|european) citizen(ship)?\\b.{0,20}(required|only|necessary)|must be an eu|students? of (czech|polish|hungarian|slovak|romanian) universit",
+     "when": {"needs_authorization": true}, "route_block": true},
+    {"label": "No visa sponsorship / must already be allowed to work there", "re": "(eligible|authori[sz]ed|entitled|permitted) to work in [a-z ,]+(without|with no)[a-z ]{0,20}(visa )?sponsorship|no visa sponsorship|not eligible for (uk |eu )?visa sponsorship|visa sponsorship: no|must (already )?have the right to work|work permit.{0,25}(not|cannot).{0,20}(provided|sponsor)",
+     "when": {"needs_authorization": true, "not_country": ["__home__"], "kind": ["entry", "mid", "senior"]}, "route_block": true},
+    {"label": "UK or Irish university enrolment required", "re": "(enrolled|studying|registered) (at|in) an? (uk|united kingdom|irish|roi)|\\buk or roi\\b|(uk|roi) universit|right to work in the uk",
+     "when": {"needs_authorization": true, "country": ["GB", "IE"]}, "route_block": true}
+  ],
+
+  "boards": [
+    {"name": "LinkedIn (country filter)", "kind": "browser", "url": "https://www.linkedin.com/jobs/search/?keywords={kw}&location={country}&f_TPR=r86400", "note": "Needs a rendered browser. Alerts per country arrive by e-mail."},
+    {"name": "Indeed (per country)", "kind": "search", "url": "https://{cc}.indeed.com/jobs?q={kw}&l={city}", "note": "Country sub-domains: fr, nl, ie, be, es, it, ch, at, dk, se. Cannot filter to student roles; do not read zero results as no roles."},
+    {"name": "EURAXESS", "kind": "search", "url": "https://euraxess.ec.europa.eu/jobs/search", "note": "Research positions, doctoral and postdoc, across Europe."},
+    {"name": "Erasmus+ traineeships (your university)", "kind": "manual", "url": "", "note": "Placements abroad start with your university's International Office."},
+    {"name": "Employer career sites", "kind": "ats", "url": "", "note": "Polled by job_watch.py from profile/sources.json."}
+  ],
+
+  "cv_conventions": "regions/eu/cv-conventions.md",
+  "legal_notes": "regions/eu/legal.md"
+}

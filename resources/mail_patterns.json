@@ -1,0 +1,37 @@
+{
+  "_about": "Extra wordings for scripts/mail_sync.py beyond its built-in English and German ones. One list of regular expressions per mail kind. Text is matched case-insensitively against the subject plus the start of the body, accents kept as written. Add the wordings of your own language here (or in profile/mail_patterns.json, which is merged on top). Keep expressions specific: a rejection pattern that also appears in an acknowledgement turns acknowledgements into rejections.",
+  "rejection": [
+    "malheureusement[^.]{0,80}(ne (pouvons|pourrons)|pas retenu|candidature)|nous (avons|ne) (le regret|pouvons pas donner suite)|votre candidature n.a pas ete retenue|n.avons pas retenu",
+    "lamentamos (informarle|comunicarle)|lamentablemente|no (hemos|ha sido) seleccionad|hemos decidido (no )?continuar con otros|su candidatura no ha sido seleccionada",
+    "purtroppo[^.]{0,80}(non|candidatura)|abbiamo deciso di proseguire con altri|la sua candidatura non e stata selezionata",
+    "helaas[^.]{0,80}(niet|kandidatuur|sollicitatie)|wij hebben besloten (om )?(niet|met andere)|je sollicitatie is niet geselecteerd",
+    "infelizmente[^.]{0,80}(nao|candidatura)|decidimos (nao )?prosseguir com outros|a sua candidatura nao foi selecionada"
+  ],
+  "ack": [
+    "nous avons bien recu votre candidature|merci pour votre candidature|accuse de reception",
+    "hemos recibido su (candidatura|solicitud)|gracias por (su|tu) (candidatura|inter[eé]s)",
+    "abbiamo ricevuto la (tua|sua) candidatura|grazie per la (tua|sua) candidatura",
+    "we hebben je sollicitatie ontvangen|bedankt voor je sollicitatie|ontvangstbevestiging",
+    "recebemos a sua candidatura|obrigado pela sua candidatura"
+  ],
+  "interview": [
+    "nous (vous )?invitons? (a|pour) (un |un\\s)?(entretien|rendez-vous)|entretien (telephonique|video)|planifier (un|votre) entretien",
+    "le (invitamos|invitamos a) (una )?entrevista|queremos invitarle a una entrevista",
+    "ti invitiamo (a|per) un colloquio|colloquio (telefonico|conoscitivo)",
+    "we nodigen je uit (voor|om) (een )?(gesprek|interview)|uitnodiging (voor )?(een )?(gesprek|interview)",
+    "convidamos (voce|o) para (uma )?entrevista|agendar (uma |a )?entrevista"
+  ],
+  "offer": [
+    "nous avons le plaisir de vous proposer|offre d.emploi ferme|contrat (de travail )?ci-joint",
+    "nos complace ofrecerle|oferta de trabajo|contrato adjunto",
+    "siamo lieti di offrirti|proposta di lavoro|contratto in allegato",
+    "we bieden je (graag )?(de functie|een arbeidsovereenkomst)|arbeidsovereenkomst bijgevoegd"
+  ],
+  "info_request": [
+    "veuillez (nous )?(envoyer|transmettre|completer|confirmer)|il nous manque (des|les) documents",
+    "por favor (envie|envia|adjunte|complete|confirme)|faltan (algunos )?documentos",
+    "ti chiediamo di (inviare|completare|confermare)|ci mancano (dei )?documenti",
+    "wil je (nog )?(het volgende )?(opsturen|aanvullen|bevestigen)|er ontbreken (nog )?documenten",
+    "por favor (envie|complete|confirme)|faltam documentos"
+  ]
+}

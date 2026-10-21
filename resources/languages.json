@@ -1,0 +1,33 @@
+{
+  "_about": "How the analyser finds a language requirement in a posting (scripts/analyze.py, language_requirement). For each language: the words that name it ('anchors'), a few stop words so a posting's own language can be detected, and optional extra phrases. The generic phrases for levels (CEFR, 'native', 'fluent', 'very good', 'good') are shared by all languages and live under `phrases`. All text is matched after lower-casing and folding accents, so write terms without accents (ä -> ae, é -> e, ñ -> n).",
+  "phrases": {
+    "native": "muttersprach|mother tongue|native|langue maternelle|lengua materna|madrelingua|moedertaal|lingua materna|bilingual|zweisprachig",
+    "hard": "verhandlungssicher[^.]{0,30}c2|business fluent|fluent and professional|professional proficiency|full professional proficiency|negotiation.level|negotiating",
+    "very_good": "sehr gute|fliessende|fliessend|exzellente|ausgezeichnete|verhandlungssichere|sichere|sicheres|very good|excellent|fluent|proficient|strong|advanced|courant|tres bon|excellent niveau|maitrise|fluido|excelente|nivel alto|ottima|ottimo|fluente|uitstekende|vloeiend|goede beheersing",
+    "good": "gute|good (command of |knowledge of |working knowledge of )?|bonnes|bonne|buen|buena|buona|goede|working knowledge|conversational|kenntnisse|skills|knowledge of",
+    "advantage": "von vorteil|wuenschenswert|ideal|plus|nice to have|desirable|advantage|bonus|preferred|bevorzugt|souhait|apprecie|valuable|helpful|hilfreich|vorteilhaft|nicht zwingend|not essential|gerne|welcome|optional"
+  },
+  "languages": {
+    "en": {"name": "English", "anchors": ["english", "englisch", "anglais", "ingles", "inglese", "engels", "ingles"], "stop": ["the", "and", "with", "you", "will", "our", "for", "are", "your", "have", "this", "that"]},
+    "de": {"name": "German", "anchors": ["deutsch", "german", "allemand", "aleman", "tedesco", "duits", "alemao"], "stop": ["und", "der", "die", "das", "mit", "fuer", "wir", "sie", "ist", "ein", "eine", "dich", "du"]},
+    "fr": {"name": "French", "anchors": ["french", "francais", "francophone", "frances", "francese", "frans", "franzoesisch"], "stop": ["et", "les", "des", "pour", "vous", "nous", "une", "dans", "est", "sur"]},
+    "es": {"name": "Spanish", "anchors": ["spanish", "espanol", "castellano", "spanisch", "espagnol", "spagnolo", "spaans"], "stop": ["los", "las", "con", "para", "una", "del", "por", "que", "como"]},
+    "it": {"name": "Italian", "anchors": ["italian", "italiano", "italienisch", "italien", "italiaans"], "stop": ["il", "della", "per", "con", "una", "che", "sono", "nel", "gli"]},
+    "nl": {"name": "Dutch", "anchors": ["dutch", "nederlands", "niederlaendisch", "neerlandais"], "stop": ["het", "een", "van", "voor", "met", "zijn", "wij", "jij", "bij"]},
+    "pt": {"name": "Portuguese", "anchors": ["portuguese", "portugues", "portugiesisch", "portugais"], "stop": ["uma", "para", "com", "dos", "das", "nao", "voce", "nos", "mais"]},
+    "pl": {"name": "Polish", "anchors": ["polish", "polski", "jezyk polski", "polnisch"], "stop": ["oraz", "dla", "jest", "nie", "lub", "przez", "naszego"]},
+    "sv": {"name": "Swedish", "anchors": ["swedish", "svenska", "schwedisch"], "stop": ["och", "att", "som", "med", "for", "har", "vi", "ett"]},
+    "da": {"name": "Danish", "anchors": ["danish", "dansk", "daenisch"], "stop": ["og", "til", "som", "med", "har", "vi", "ikke", "et"]},
+    "no": {"name": "Norwegian", "anchors": ["norwegian", "norsk", "norwegisch"], "stop": ["og", "til", "som", "med", "har", "vi", "ikke", "en"]},
+    "fi": {"name": "Finnish", "anchors": ["finnish", "suomi", "finnisch"], "stop": ["ja", "on", "ei", "etta", "kanssa", "meille"]},
+    "cs": {"name": "Czech", "anchors": ["czech", "cesky", "cestina", "tschechisch"], "stop": ["a", "je", "pro", "na", "se", "ktera", "nasi"]},
+    "hu": {"name": "Hungarian", "anchors": ["hungarian", "magyar", "ungarisch"], "stop": ["es", "hogy", "egy", "vagy", "nem", "van"]},
+    "ro": {"name": "Romanian", "anchors": ["romanian", "romana", "rumaenisch"], "stop": ["si", "pentru", "este", "care", "cu", "din"]},
+    "el": {"name": "Greek", "anchors": ["greek", "ellinika", "griechisch"], "stop": ["kai", "gia", "einai", "me"]},
+    "tr": {"name": "Turkish", "anchors": ["turkish", "turkce", "tuerkisch"], "stop": ["ve", "icin", "bir", "ile", "olan"]},
+    "ar": {"name": "Arabic", "anchors": ["arabic", "arabisch", "arabe"], "stop": []},
+    "hi": {"name": "Hindi", "anchors": ["hindi"], "stop": []},
+    "zh": {"name": "Chinese (Mandarin)", "anchors": ["mandarin", "chinese", "chinesisch", "chinois"], "stop": []},
+    "ja": {"name": "Japanese", "anchors": ["japanese", "japanisch", "japonais"], "stop": []}
+  }
+}

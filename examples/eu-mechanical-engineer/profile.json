@@ -1,0 +1,60 @@
+{
+  "name": "Chris Sample",
+  "email": "chris.sample@example.com",
+  "extra_emails": [],
+  "career_stage": "experienced",
+  "levels_sought": [
+    "mid",
+    "senior"
+  ],
+  "regions": [
+    "eu"
+  ],
+  "primary_countries": [
+    "NL",
+    "BE"
+  ],
+  "scope_countries": [],
+  "cities": [
+    "Eindhoven",
+    "Utrecht"
+  ],
+  "remote_ok": true,
+  "languages": [
+    {
+      "code": "nl",
+      "level": "native"
+    },
+    {
+      "code": "en",
+      "level": "c2"
+    },
+    {
+      "code": "fr",
+      "level": "b2"
+    }
+  ],
+  "work_authorization": {
+    "status": "eu_citizen",
+    "note": "Fictional example: a Dutch citizen with the right to work across the EU"
+  },
+  "document_language": "en",
+  "accept_unrelated_income": false,
+  "min_salary": null,
+  "recency_points": true,
+  "tiers": {
+    "tier1": 7,
+    "tier2": 4
+  },
+  "exclude_titles": [],
+  "mail": {
+    "ignore_senders": [],
+    "ignore_recipients": [],
+    "alert_queries": [],
+    "alert_senders": []
+  },
+  "cv": {
+    "headers": {}
+  },
+  "verdict_labels": {}
+}

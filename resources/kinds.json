@@ -1,0 +1,65 @@
+{
+  "_about": "Role types, recognised from a posting's title (multilingual). The analyser asks `kind` of every role; the profile's `levels_sought` decides which kinds are 'sought'. A region pack may add or retune a kind in its region.json under `kinds`. Order matters: the first match wins.",
+  "order": [
+    "thesis",
+    "student_assistant",
+    "working_student",
+    "internship",
+    "trainee",
+    "senior",
+    "mid",
+    "entry",
+    "other"
+  ],
+  "kinds": {
+    "thesis": {
+      "label": "Thesis",
+      "student": true,
+      "title_re": "masterarbeit|master.?s? thesis|master thesis|abschlussarbeit|bachelorarbeit|bachelor.?s? thesis|\\bthesis\\b|dissertation project|memoire de (fin|master)|tesis (de )?(master|fin)|trabajo fin de (master|grado)|tesi di (laurea|master)|afstudeer|masterproef|dissertacao|stage de fin d.etudes|capstone"
+    },
+    "student_assistant": {
+      "label": "Student assistant",
+      "student": true,
+      "title_re": "hilfskraft|\\bshk\\b|\\bwhk\\b|\\bwhb\\b|hiwi|student assistant|studentische[rn]? mitarbeiter|studentische aushilfe|student worker|student employee|research assistant|teaching assistant|graduate assistant|assistantship|tutor|moniteur|auxiliar de|studentassistent|undergraduate (research|assistant)|work.?study"
+    },
+    "working_student": {
+      "label": "Working student",
+      "student": true,
+      "title_re": "werkstudent|working student|student(ische)? (trainee|job)|werksstudent|studentenjob|part.?time student|student (analyst|developer|engineer)|etudiant.{0,12}(temps partiel|alternan)|studentenbaan|studiejob"
+    },
+    "internship": {
+      "label": "Internship",
+      "student": true,
+      "title_re": "praktik|\\bintern\\b|\\binterns\\b|internship|\\bstage\\b|stagiaire|placement|co-?op\\b|summer (analyst|associate|intern)|practicas|pr[aá]cticas|tirocinio|stagio|stagiair|est[aá]gio|praktyki|vacation (student|scheme)|industrial placement|year in industry|sandwich (year|placement)"
+    },
+    "trainee": {
+      "label": "Trainee / graduate programme",
+      "student": false,
+      "title_re": "trainee|graduate (programme|program|scheme|role)|berufseinsteiger.?programm|management trainee|rotational|campus hire|early talent|nachwuchsf[uü]hrungskr|junior (programme|program)"
+    },
+    "senior": {
+      "label": "Senior",
+      "student": false,
+      "title_re": "\\bsenior\\b|\\bsr\\.?\\b|\\blead\\b|principal|staff (engineer|scientist)|head of|director|\\bvp\\b|vice president|leiter|abteilungsleit|chef de|directeur|jefe de|responsabile"
+    },
+    "mid": {
+      "label": "Mid-level",
+      "student": false,
+      "title_re": "\\bspecialist\\b|spezialist|consultant|\\bengineer\\b|developer|scientist|referent|sachbearbeiter|\\bmanager\\b|\\bofficer\\b|\\banalyst\\b ii|ingenieur|ingeniero|ingegnere|chargé de|responsable"
+    },
+    "entry": {
+      "label": "Entry level",
+      "student": false,
+      "title_re": "\\bjunior\\b|\\bjr\\.?\\b|entry.?level|associate\\b|\\banalyst\\b|berufseinsteiger|einsteiger|new grad(uate)?|recent grad(uate)?|university graduate|early career|assistant\\b|coordinator|koordinator|debutant|junior\\b"
+    },
+    "other": {
+      "label": "Other",
+      "student": false,
+      "title_re": "(?!x)x"
+    }
+  },
+  "employment": {
+    "permanent": "unbefristet|permanent|festanstellung|\\bcdi\\b|full.?time permanent|indefinite|indeterminado|indeterminato",
+    "contract": "freelance|\\bcontract\\b|contractor|befristet|\\bcdd\\b|temporary|fixed.?term|determinado|determinato|interim"
+  }
+}

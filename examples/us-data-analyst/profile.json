@@ -1,0 +1,23 @@
+{
+  "name": "Jordan Sample",
+  "email": "jordan.sample@example.com",
+  "extra_emails": [],
+  "career_stage": "new_grad",
+  "levels_sought": ["internship", "entry"],
+  "regions": ["us"],
+  "primary_countries": [],
+  "scope_countries": [],
+  "cities": ["Austin", "Chicago", "New York"],
+  "remote_ok": true,
+  "languages": [{"code": "en", "level": "c2"}, {"code": "es", "level": "b2"}],
+  "work_authorization": {"status": "opt", "note": "Fictional example: F-1 graduate on post-completion OPT"},
+  "document_language": "en",
+  "accept_unrelated_income": false,
+  "min_salary": null,
+  "recency_points": true,
+  "tiers": {"tier1": 7, "tier2": 4},
+  "exclude_titles": [],
+  "mail": {"ignore_senders": [], "ignore_recipients": [], "alert_queries": [], "alert_senders": []},
+  "cv": {"headers": {}},
+  "verdict_labels": {}
+}

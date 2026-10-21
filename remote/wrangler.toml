@@ -1,0 +1,14 @@
+name = "job-inbox"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# The phone page (static shell, no data in it). Everything under /api/* goes to the Worker, which holds the data behind a login.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Create your own namespace once with `npx wrangler kv namespace create KV` and paste the id it prints here (docs/PHONE.md).
+[[kv_namespaces]]
+binding = "KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+

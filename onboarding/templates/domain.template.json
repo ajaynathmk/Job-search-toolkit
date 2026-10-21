@@ -1,0 +1,27 @@
+{
+  "_about": "WHAT. Inferred from the CV by /start (onboarding/domain-inference.md) and confirmed with the person. Patterns are plain letters, matched against the folded text of the full posting (umlauts and accents folded), case-insensitively where it matters. Never invent evidence: cv_evidence only claims what the CV shows.",
+  "industries": [],
+  "categories": [
+    {"id": "own_field", "label": "My field", "fit": "core"},
+    {"id": "adjacent", "label": "Adjacent fields", "fit": "bridge"},
+    {"id": "other", "label": "Other", "fit": "none"}
+  ],
+  "subfields": [
+    {"id": "example_core", "label": "Example core field", "category": "own_field", "role": "core", "weight": 3,
+     "terms": ["example term one", "example term two"], "aliases": ["example alias"]}
+  ],
+  "penalty_subfields": [],
+  "priority_employers": [],
+  "industry_regex": "",
+  "income_context_re": "",
+  "income_context_min": 4,
+  "search_terms": [],
+  "cv_evidence": [
+    {"term": "Example skill (CV-1)", "re": "example skill", "status": "covered", "evidence": "where on the CV this is shown"}
+  ],
+  "evidence_bonus": [],
+  "thesis_pillars": {},
+  "locked_terms": [],
+  "classification_overrides": [],
+  "walls": []
+}
