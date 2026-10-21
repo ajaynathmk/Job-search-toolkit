@@ -1,6 +1,6 @@
 {
   "name": "job-search-toolkit",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
   "description": "CV and cover-letter generator for the job-search toolkit (markdown to .docx)",
   "license": "MIT",

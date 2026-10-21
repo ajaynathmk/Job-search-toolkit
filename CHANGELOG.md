@@ -4,10 +4,14 @@ Version numbers are a scheme, not strict semver: a whole number marks a point th
 that export until the maintainer says the version has moved on. The current version also lives in the `VERSION` file.
 
 Every change to the rules, the scripts, the configuration schema or the behaviour gets a one-line entry here under the open version, in the same
-change. Do not bump the version yourself: say "this is version 1.7" (or "start version 1.7") and Claude closes the open section, sets `VERSION` and
+change. Do not bump the version yourself: say "this is version 1.9" (or "start version 1.9") and Claude closes the open section, sets `VERSION` and
 opens the next one.
 
-## [1.7] — in progress (the application)
+## [1.8] — in progress
+
+- Version 1.7 closed (the application release, below). `ENGINE_VERSION` stays 1.7 on purpose: no analysis rule changed, and bumping it would make every user's rows re-analyse for nothing.
+
+## [1.7] — closed 2026-10-21 (the application)
 
 **Added**
 - README: requirements table, repository map, day-to-day commands, troubleshooting, and the real clone URL.
