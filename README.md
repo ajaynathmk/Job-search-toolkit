@@ -21,12 +21,26 @@ Give the page your CV. It works out your field, searches, reads every posting in
 each. It runs the judgment steps through **Claude Code on your Claude subscription** (no API key), everything stays on your computer, and nothing is ever sent to an employer.
 Details, limits and troubleshooting: [docs/APP.md](docs/APP.md). The slash commands below do the same work from a Claude Code session, with more control.
 
+## Requirements
+
+| Needed | For | Check |
+|---|---|---|
+| Python 3.10+ and `pip install -r requirements.txt` | everything (core: flask, requests, beautifulsoup4, lxml, python-dateutil, pypdf) | `python app.py --check` |
+| [Claude Code](https://claude.com/claude-code) on a Claude subscription | the judgment steps: reading your CV, reviewing best fits, tailoring CVs and letters | `python scripts/onboard.py doctor` |
+| Node.js + `npm install` | building the `.docx` CV and cover letter (`scripts/build-cv.js`) | `doctor` |
+| `python-docx` | page-layout checks on tailored CVs | `doctor` |
+| Playwright (`playwright install chromium`) | LinkedIn / Xing postings and rendered job boards | `doctor` |
+| Google API packages + your own OAuth client | read-only Gmail, the daily digest to yourself ([docs/GMAIL.md](docs/GMAIL.md)) | `doctor` |
+| LibreOffice | rendering a package to PDF for the visual check | `doctor` |
+
+Only Python and Claude Code are required; each other tool switches on one feature, and `doctor` tells you which.
+
 ## Quick start (in a Claude Code session)
 
 You need [Claude Code](https://claude.com/claude-code), Python 3.10+ and Git. (Node.js, Gmail, LibreOffice and Playwright are optional; each switches one feature on.)
 
 ```bash
-git clone <this repository> job-search
+git clone https://github.com/ajaynathmk/Job-search-toolkit.git job-search
 cd job-search
 pip install -r requirements.txt
 claude            # opens Claude Code in this folder
@@ -91,6 +105,46 @@ board sweeps in a Claude session                 ┘      │
 - **Links are verified.** A URL reaches your tracker only after the page was opened and named the employer and the role.
 - **Gmail is read-only.** It sees what you sent and what came back, files rejections and invitations, and turns job-alert mail into rows. It never replies, labels or deletes.
 - **Your dashboard** (`python scripts/webapp.py`, local only) and an optional **phone inbox** on Cloudflare's free tier.
+
+## What is in this repository
+
+```
+app.py, start.bat, start.command   one-command web app (http://127.0.0.1:5057, local only)
+scripts/                           the engine: intake, analyze, pipeline, db, job_watch, uni_watch, mail_sync,
+                                   gmail_client, webapp, build-cv.js, the checkers (aicheck, consistency_check,
+                                   lang_check, link_verify) and privacy_scan; scripts/tests/ holds the tests
+rules/                             the written rules each stage follows; rules/pipeline.md is the entry point
+regions/                           region packs: de, eu, us, and _template for a new country
+onboarding/                        how a CV becomes a configuration (used by /start and the web app)
+examples/                          fictional people for the demo (de-bioinformatics-student, eu-mechanical-engineer, us-data-analyst)
+docs/                              setup and operation guides (APP, ONBOARDING, OPERATING, GMAIL, PHONE, PRIVACY, FAQ, ARCHITECTURE)
+remote/                            optional phone inbox (Cloudflare Worker)
+resources/                         CV header data and other static assets
+db/schema.sql                      the SQLite tracker schema (the database itself is created locally, never committed)
+.claude/commands/                  the slash commands: /start /daily /review /apply /status /mail /region /schedule /phone /doctor /digest
+CLAUDE.md, AGENTS.md               instructions for Claude Code and other agents working in the repo
+```
+
+Created on your machine when you use it, and git-ignored: `profile/` (your configuration and CV), `db/tracker.db`, `jd/` (cached postings), `applications/` (CV and letter packages), `data/`, `digests/`, `logs/`, `config/` (tokens).
+
+## Day-to-day commands
+
+```bash
+python scripts/onboard.py status | check | doctor | demo   # configuration and health
+python scripts/pipeline.py status | queue | run            # the conductor: what is due, what ran
+python scripts/intake.py run                                # file new postings and fetch their full text
+python scripts/analyze.py run                               # score every unanalysed posting from its full text
+python scripts/webapp.py                                    # the dashboard at http://127.0.0.1:5057
+bash scripts/ship-package.sh <application-folder>           # CV + letter quality gate
+python scripts/privacy_scan.py                              # run before any commit
+```
+
+## Troubleshooting
+
+- **The page says nothing is configured:** give it your CV, or run `/start`. `python scripts/onboard.py check` lists what is missing.
+- **Port 5057 is taken:** `python app.py --port 8080`.
+- **A feature is switched off:** `python scripts/onboard.py doctor` names the missing tool.
+- **Start over with a different CV:** delete `profile/` (and `db/tracker.db`, `jd/` if you want the old postings gone), then start again.
 
 ## Regions
 

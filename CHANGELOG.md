@@ -10,6 +10,7 @@ opens the next one.
 ## [1.7] — in progress (the application)
 
 **Added**
+- README: requirements table, repository map, day-to-day commands, troubleshooting, and the real clone URL.
 - **The application** (`app.py`, page `/start`): give it a CV and nothing else, and it works out the person's field, builds the search, collects postings, reads every
   posting in full, scores each against the CV, has the best fits read a second time, and shows the ranked jobs with the reason, the skills the CV shows and the gaps.
   One command (`python app.py`, or `start.bat` / `start.command`), local only, in the browser. See `docs/APP.md`.
